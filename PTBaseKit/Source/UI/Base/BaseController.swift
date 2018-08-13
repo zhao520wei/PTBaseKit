@@ -19,7 +19,7 @@ extension BaseController {
 /**
  * 基础控制器
  * 为了增加流畅性, 使用 performSetup 函数替代 viewDidLoad 去执行界面初始化工作
- * 接入facebook的texture框架, 进一步提高滑动性能
+ * 接入facebook的texture框架, 进一步提高滑动性能 (暂时去掉)
  */
 open class BaseController: UIViewController {
     
@@ -77,7 +77,7 @@ open class BaseController: UIViewController {
     /**
      * 耗时界面初始化操作
      */
-    open func performSetup() {
+    @objc open func performSetup() {
         
     }
     
