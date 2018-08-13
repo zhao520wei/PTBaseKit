@@ -69,6 +69,7 @@
 		959BBF5B2111F4B500106646 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBF1C2111F4B400106646 /* FileService.swift */; };
 		959BBF5C2111F4B500106646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBF1E2111F4B400106646 /* AppDelegate.swift */; };
 		959BBF5E2111F4F300106646 /* UIKitTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBF5D2111F4F300106646 /* UIKitTableController.swift */; };
+		95BA686B2121F3A300FDB7FD /* MJRefresh+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */; };
 		98929904E29583B5DA516CC9 /* Pods_PTBaseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B02495693B8E88A88D1991 /* Pods_PTBaseKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +153,7 @@
 		959BBF1C2111F4B400106646 /* FileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		959BBF1E2111F4B400106646 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		959BBF5D2111F4F300106646 /* UIKitTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTableController.swift; sourceTree = "<group>"; };
+		95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MJRefresh+Extension.swift"; sourceTree = "<group>"; };
 		C22F7CD723FF55B896D2E9C0 /* Pods-PTBaseKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTBaseKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PTBaseKitTests/Pods-PTBaseKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2B02495693B8E88A88D1991 /* Pods_PTBaseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PTBaseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -326,6 +328,7 @@
 				959BBEDE2111F4B400106646 /* TextFieldController.swift */,
 				959BBEDF2111F4B400106646 /* UIBarButtonItem+Extension.swift */,
 				959BBEE02111F4B400106646 /* runtime+UIControl.swift */,
+				95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				959BBF4E2111F4B500106646 /* CssOperator.swift in Sources */,
 				959BBF5C2111F4B500106646 /* AppDelegate.swift in Sources */,
 				959BBF252111F4B400106646 /* Map.swift in Sources */,
+				95BA686B2121F3A300FDB7FD /* MJRefresh+Extension.swift in Sources */,
 				959BBF2F2111F4B400106646 /* UIView+Extensions.swift in Sources */,
 				959BBF472111F4B500106646 /* ShareController.swift in Sources */,
 				959BBF452111F4B500106646 /* BaseController.swift in Sources */,

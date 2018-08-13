@@ -140,10 +140,16 @@ public class CommonTableController: BaseController, TableController {
     
     private func bindObservables() {
         if let _ = self.reloadAction {
-            self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
-                guard let weakSelf = self else {return}
-                weakSelf.reloadAction?(weakSelf)
-            })
+            self.tableView.rx_pullToRefresh()
+                .subscribe(onNext: {[weak self] in
+                    guard let weakSelf = self else {return}
+                    weakSelf.reloadAction?(weakSelf)
+                })
+                .disposed(by: self)
+//            self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
+//                guard let weakSelf = self else {return}
+//                weakSelf.reloadAction?(weakSelf)
+//            })
         }
     }
 }
