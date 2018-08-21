@@ -37,7 +37,6 @@
 		959BBF3B2111F4B500106646 /* DefaultTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEEC2111F4B400106646 /* DefaultTableSection.swift */; };
 		959BBF3C2111F4B500106646 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEEE2111F4B400106646 /* ListController.swift */; };
 		959BBF3D2111F4B500106646 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEEF2111F4B400106646 /* TableController.swift */; };
-		959BBF3E2111F4B500106646 /* IGListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEF12111F4B400106646 /* IGListController.swift */; };
 		959BBF3F2111F4B500106646 /* DefaultTableCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEF42111F4B400106646 /* DefaultTableCellNode.swift */; };
 		959BBF402111F4B500106646 /* DefaultTableSectionNodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEF52111F4B400106646 /* DefaultTableSectionNodeModel.swift */; };
 		959BBF412111F4B500106646 /* DefaultTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEF62111F4B400106646 /* DefaultTableController.swift */; };
@@ -121,7 +120,6 @@
 		959BBEEC2111F4B400106646 /* DefaultTableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTableSection.swift; sourceTree = "<group>"; };
 		959BBEEE2111F4B400106646 /* ListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
 		959BBEEF2111F4B400106646 /* TableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
-		959BBEF12111F4B400106646 /* IGListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IGListController.swift; sourceTree = "<group>"; };
 		959BBEF42111F4B400106646 /* DefaultTableCellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTableCellNode.swift; sourceTree = "<group>"; };
 		959BBEF52111F4B400106646 /* DefaultTableSectionNodeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTableSectionNodeModel.swift; sourceTree = "<group>"; };
 		959BBEF62111F4B400106646 /* DefaultTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTableController.swift; sourceTree = "<group>"; };
@@ -338,7 +336,6 @@
 			children = (
 				959BBEE22111F4B400106646 /* TableController */,
 				959BBEED2111F4B400106646 /* Protocol */,
-				959BBEF02111F4B400106646 /* IGListKit */,
 				959BBEF22111F4B400106646 /* ASDisplayKit */,
 			);
 			path = List;
@@ -384,14 +381,6 @@
 				959BBEEF2111F4B400106646 /* TableController.swift */,
 			);
 			path = Protocol;
-			sourceTree = "<group>";
-		};
-		959BBEF02111F4B400106646 /* IGListKit */ = {
-			isa = PBXGroup;
-			children = (
-				959BBEF12111F4B400106646 /* IGListController.swift */,
-			);
-			path = IGListKit;
 			sourceTree = "<group>";
 		};
 		959BBEF22111F4B400106646 /* ASDisplayKit */ = {
@@ -697,7 +686,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PTBaseKit/Pods-PTBaseKit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
@@ -715,7 +703,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
@@ -769,7 +756,6 @@
 				959BBF202111F4B400106646 /* MapController.swift in Sources */,
 				959BBF442111F4B500106646 /* Helpers.swift in Sources */,
 				959BBF572111F4B500106646 /* UIControl.swift in Sources */,
-				959BBF3E2111F4B500106646 /* IGListController.swift in Sources */,
 				959BBF422111F4B500106646 /* TableNodeController.swift in Sources */,
 				959BBF322111F4B400106646 /* TextFieldController.swift in Sources */,
 				959BBF462111F4B500106646 /* ViewFactory.swift in Sources */,

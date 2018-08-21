@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import IGListKit
 import AsyncDisplayKit
 
 public protocol ListView: class {
@@ -36,7 +35,7 @@ public protocol ListHeaderFooterViewModel {
 
 public protocol ListSectionViewModel {
     
-    var listDiffableValues: ListDiffable? {get}
+//    var listDiffableValues: ListDiffable? {get}
     
     var header: ListHeaderFooterViewModel? {get}
     
@@ -46,7 +45,7 @@ public protocol ListSectionViewModel {
 }
 
 extension ListSectionViewModel {
-    public var listDiffableValues: ListDiffable? {return nil}
+//    public var listDiffableValues: ListDiffable? {return nil}
 }
 
 public protocol ListController {

@@ -13,8 +13,8 @@ target 'PTBaseKit' do
     pod 'MBProgressHUD'
     pod 'Kingfisher'
     pod 'Texture'
-    pod 'IGListKit'
-    
+#    pod 'IGListKit'
+
     # amap
     pod 'AMap3DMap-NO-IDFA' #2D地图SDK
     pod 'AMapSearch-NO-IDFA' #搜索功能
