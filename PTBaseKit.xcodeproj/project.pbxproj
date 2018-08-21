@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8EE511AA73D1471191099AA0 /* Pods_PTBaseKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71585BF9C9A025414CE03955 /* Pods_PTBaseKitTests.framework */; };
+		95409114212C098D00A82C7F /* IndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95409113212C098D00A82C7F /* IndexController.swift */; };
 		959BBEA72111EE9300106646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959BBEA52111EE9300106646 /* Main.storyboard */; };
 		959BBEA92111EE9400106646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959BBEA82111EE9400106646 /* Assets.xcassets */; };
 		959BBEAC2111EE9400106646 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959BBEAA2111EE9400106646 /* LaunchScreen.storyboard */; };
@@ -87,6 +88,7 @@
 		57221EA4330FE88D61459B1F /* Pods-PTBaseKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTBaseKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PTBaseKit/Pods-PTBaseKit.debug.xcconfig"; sourceTree = "<group>"; };
 		71585BF9C9A025414CE03955 /* Pods_PTBaseKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PTBaseKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6903A5DCB37FA0825753C3 /* Pods-PTBaseKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTBaseKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PTBaseKitTests/Pods-PTBaseKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		95409113212C098D00A82C7F /* IndexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexController.swift; sourceTree = "<group>"; };
 		959BBE9E2111EE9300106646 /* PTBaseKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTBaseKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		959BBEA62111EE9300106646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		959BBEA82111EE9400106646 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				959BBEC32111F4B400106646 /* MapController.swift */,
 				959BBF5D2111F4F300106646 /* UIKitTableController.swift */,
 				959BBEC42111F4B400106646 /* CustomTableNodeController.swift */,
+				95409113212C098D00A82C7F /* IndexController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -789,6 +792,7 @@
 				959BBF5B2111F4B500106646 /* FileService.swift in Sources */,
 				959BBF3B2111F4B500106646 /* DefaultTableSection.swift in Sources */,
 				959BBF332111F4B400106646 /* UIBarButtonItem+Extension.swift in Sources */,
+				95409114212C098D00A82C7F /* IndexController.swift in Sources */,
 				959BBF5E2111F4F300106646 /* UIKitTableController.swift in Sources */,
 				959BBF282111F4B400106646 /* LoadingController.swift in Sources */,
 				959BBF222111F4B400106646 /* GoogleMaps+MapAdapter.swift in Sources */,

@@ -8,8 +8,6 @@
 
 import Foundation
 import UIKit
-import RxSwift
-import RxCocoa
 
 public protocol TableSection: class {
     var viewModel: TableSectionViewModel? {get}
