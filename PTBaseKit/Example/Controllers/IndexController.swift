@@ -11,7 +11,7 @@ import UIKit
 class IndexController: BaseController {
     
     let segmented: UISegmentedControl = {
-        let item = UISegmentedControl(items: ["UIKitTable", "ASDKTable", "GoogleMaps"])
+        let item = UISegmentedControl(items: ["UIKitTable", "ASDKTable", "GoogleMaps", "Utils"])
         item.selectedSegmentIndex = 0
         return item
     }()
@@ -21,6 +21,8 @@ class IndexController: BaseController {
     let asdkTable: CustomTableNodeController = CustomTableNodeController()
     
     let map: MapController = MapController()
+    
+    let utils: UtilsController = UtilsController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,12 +45,14 @@ class IndexController: BaseController {
         self.setup(view: self.uikitTable.view, segmentIndex: 0)
         self.setup(view: self.asdkTable.view, segmentIndex: 1)
         self.setup(view: self.map.view, segmentIndex: 2)
-        
+        self.setup(view: self.utils.view, segmentIndex: 3)
     }
     
     private func setup(view aView: UIView, segmentIndex: Int) {
+        // 添加到背景上
         self.view.addSubview(aView)
         aView.snp.makeConstraints{$0.edges.equalToSuperview()}
+        // 把显示与否绑定到对应的index上
         self.segmented.rx.value.map { $0 != segmentIndex }.bind(to: aView.rx.isHidden).disposed(by: self)
     }
 }

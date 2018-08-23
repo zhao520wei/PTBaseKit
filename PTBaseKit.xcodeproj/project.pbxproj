@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8EE511AA73D1471191099AA0 /* Pods_PTBaseKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71585BF9C9A025414CE03955 /* Pods_PTBaseKitTests.framework */; };
 		95409114212C098D00A82C7F /* IndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95409113212C098D00A82C7F /* IndexController.swift */; };
+		956CAB4A212D51BB00020D6E /* UtilsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956CAB49212D51BB00020D6E /* UtilsController.swift */; };
 		959BBEA72111EE9300106646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959BBEA52111EE9300106646 /* Main.storyboard */; };
 		959BBEA92111EE9400106646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959BBEA82111EE9400106646 /* Assets.xcassets */; };
 		959BBEAC2111EE9400106646 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959BBEAA2111EE9400106646 /* LaunchScreen.storyboard */; };
@@ -89,6 +90,7 @@
 		71585BF9C9A025414CE03955 /* Pods_PTBaseKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PTBaseKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6903A5DCB37FA0825753C3 /* Pods-PTBaseKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTBaseKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PTBaseKitTests/Pods-PTBaseKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		95409113212C098D00A82C7F /* IndexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexController.swift; sourceTree = "<group>"; };
+		956CAB49212D51BB00020D6E /* UtilsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsController.swift; sourceTree = "<group>"; };
 		959BBE9E2111EE9300106646 /* PTBaseKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTBaseKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		959BBEA62111EE9300106646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		959BBEA82111EE9400106646 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -211,10 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				959BBECA2111F4B400106646 /* Source */,
-				95FAFBC4211339CF00FEA6F5 /* Views */,
 				959BBF1D2111F4B400106646 /* Application */,
-				959BBEC52111F4B400106646 /* Map */,
-				959BBEC12111F4B400106646 /* Controllers */,
+				95A45269212E603F00325960 /* Example */,
 				95FAFBC5211346F800FEA6F5 /* Frameworks */,
 				959BBEA82111EE9400106646 /* Assets.xcassets */,
 				959BBEA52111EE9300106646 /* Main.storyboard */,
@@ -236,11 +236,12 @@
 		959BBEC12111F4B400106646 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				95409113212C098D00A82C7F /* IndexController.swift */,
 				959BBEC22111F4B400106646 /* ViewController.swift */,
 				959BBEC32111F4B400106646 /* MapController.swift */,
+				956CAB49212D51BB00020D6E /* UtilsController.swift */,
 				959BBF5D2111F4F300106646 /* UIKitTableController.swift */,
 				959BBEC42111F4B400106646 /* CustomTableNodeController.swift */,
-				95409113212C098D00A82C7F /* IndexController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -517,6 +518,16 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		95A45269212E603F00325960 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				95FAFBC4211339CF00FEA6F5 /* Views */,
+				959BBEC52111F4B400106646 /* Map */,
+				959BBEC12111F4B400106646 /* Controllers */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 		95FAFBC4211339CF00FEA6F5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -780,6 +791,7 @@
 				95BA686B2121F3A300FDB7FD /* MJRefresh+Extension.swift in Sources */,
 				959BBF2F2111F4B400106646 /* UIView+Extensions.swift in Sources */,
 				959BBF472111F4B500106646 /* ShareController.swift in Sources */,
+				956CAB4A212D51BB00020D6E /* UtilsController.swift in Sources */,
 				959BBF452111F4B500106646 /* BaseController.swift in Sources */,
 				959BBF3F2111F4B500106646 /* DefaultTableCellNode.swift in Sources */,
 				959BBF5A2111F4B500106646 /* SystemInfo.swift in Sources */,
