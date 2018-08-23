@@ -4,7 +4,7 @@
 
 # 结构
 ```
-chinese-xinhua/
+PTBaseKit/
 |
 +- Application/
 |  |
