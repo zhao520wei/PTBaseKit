@@ -7,22 +7,26 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class IndexController: BaseController {
     
     let segmented: UISegmentedControl = {
-        let item = UISegmentedControl(items: ["UIKitTable", "ASDKTable", "GoogleMaps", "Utils"])
+        let item = UISegmentedControl(items: ["UIKitTable", "ASDKTable", "GoogleMaps", "Utils", "Web"])
         item.selectedSegmentIndex = 0
         return item
     }()
     
-    let uikitTable: UIKitTableController = UIKitTableController()
+    lazy var uikitTable: UIKitTableController = UIKitTableController()
     
-    let asdkTable: CustomTableNodeController = CustomTableNodeController()
+    lazy var asdkTable: CustomTableNodeController = CustomTableNodeController()
     
-    let map: MapController = MapController()
+    lazy var map: MapController = MapController()
     
-    let utils: UtilsController = UtilsController()
+    lazy var utils: UtilsController = UtilsController()
+    
+    lazy var web: WebURLController = WebURLController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,17 +46,24 @@ class IndexController: BaseController {
     
     override func performSetup() {
         
-        self.setup(view: self.uikitTable.view, segmentIndex: 0)
-        self.setup(view: self.asdkTable.view, segmentIndex: 1)
-        self.setup(view: self.map.view, segmentIndex: 2)
-        self.setup(view: self.utils.view, segmentIndex: 3)
+        self.setup(controller: self.uikitTable, segmentIndex: 0)
+        self.setup(controller: self.asdkTable, segmentIndex: 1)
+        self.setup(controller: self.map, segmentIndex: 2)
+        self.setup(controller: self.utils, segmentIndex: 3)
+        self.setup(controller: self.web, segmentIndex: 4)
+        
+        self.web.rx_submit.subscribe(onNext: { [weak self] in self?.navigateWeb(url: $0) }).disposed(by: self)
     }
     
-    private func setup(view aView: UIView, segmentIndex: Int) {
+    private func navigateWeb(url: String) {
+        self.navigationController?.pushViewController(WebController().setupURL(URL(string: url)), animated: true)
+    }
+    
+    private func setup(controller: BaseController, segmentIndex: Int) {
         // 添加到背景上
-        self.view.addSubview(aView)
-        aView.snp.makeConstraints{$0.edges.equalToSuperview()}
+        self.view.addSubview(controller.view)
+        controller.view.snp.makeConstraints{$0.edges.equalToSuperview()}
         // 把显示与否绑定到对应的index上
-        self.segmented.rx.value.map { $0 != segmentIndex }.bind(to: aView.rx.isHidden).disposed(by: self)
+        self.segmented.rx.value.map { $0 != segmentIndex }.bind(to: controller.view.rx.isHidden).disposed(by: self)
     }
 }

@@ -12,6 +12,7 @@ import UIKit
 public struct ViewFactory {
     public static func createTextField(font: UIFont = 17.customFont, tintColor: UIColor = UIColor.tk.main, keyboardType: UIKeyboardType = .default, isSecureTextEntry: Bool = false) -> UITextField {
         let textField = UITextField()
+        textField.backgroundColor = UIColor.white
         textField.font = font
         textField.tintColor = tintColor
         textField.keyboardType = keyboardType

@@ -70,6 +70,7 @@
 		959BBF5B2111F4B500106646 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBF1C2111F4B400106646 /* FileService.swift */; };
 		959BBF5C2111F4B500106646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBF1E2111F4B400106646 /* AppDelegate.swift */; };
 		959BBF5E2111F4F300106646 /* UIKitTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBF5D2111F4F300106646 /* UIKitTableController.swift */; };
+		95A4526B212EB3AA00325960 /* WebURLController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4526A212EB3AA00325960 /* WebURLController.swift */; };
 		95BA686B2121F3A300FDB7FD /* MJRefresh+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */; };
 		98929904E29583B5DA516CC9 /* Pods_PTBaseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B02495693B8E88A88D1991 /* Pods_PTBaseKit.framework */; };
 /* End PBXBuildFile section */
@@ -155,6 +156,7 @@
 		959BBF1C2111F4B400106646 /* FileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
 		959BBF1E2111F4B400106646 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		959BBF5D2111F4F300106646 /* UIKitTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTableController.swift; sourceTree = "<group>"; };
+		95A4526A212EB3AA00325960 /* WebURLController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebURLController.swift; sourceTree = "<group>"; };
 		95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MJRefresh+Extension.swift"; sourceTree = "<group>"; };
 		C22F7CD723FF55B896D2E9C0 /* Pods-PTBaseKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTBaseKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PTBaseKitTests/Pods-PTBaseKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2B02495693B8E88A88D1991 /* Pods_PTBaseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PTBaseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +243,7 @@
 				959BBEC32111F4B400106646 /* MapController.swift */,
 				956CAB49212D51BB00020D6E /* UtilsController.swift */,
 				959BBF5D2111F4F300106646 /* UIKitTableController.swift */,
+				95A4526A212EB3AA00325960 /* WebURLController.swift */,
 				959BBEC42111F4B400106646 /* CustomTableNodeController.swift */,
 			);
 			path = Controllers;
@@ -797,6 +800,7 @@
 				959BBF5A2111F4B500106646 /* SystemInfo.swift in Sources */,
 				959BBF3C2111F4B500106646 /* ListController.swift in Sources */,
 				959BBF592111F4B500106646 /* MapAdapter.swift in Sources */,
+				95A4526B212EB3AA00325960 /* WebURLController.swift in Sources */,
 				959BBF432111F4B500106646 /* TipsController.swift in Sources */,
 				959BBF562111F4B500106646 /* UIImageViewCss.swift in Sources */,
 				959BBF552111F4B500106646 /* UIFont.swift in Sources */,
