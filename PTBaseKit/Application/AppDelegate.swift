@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                              highlightedGradientEndHex: 0xBD0E15,
                              noticeRedColorHex: 0xFF4200)
         
-//        BaseUIKitResource.accessory = #imageLiteral(resourceName: "right_arrow")
+        BaseUIKitResource.accessory = #imageLiteral(resourceName: "accessory")
         return true
     }
 

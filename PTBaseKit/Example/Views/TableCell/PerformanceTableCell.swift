@@ -10,6 +10,12 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+/**
+  满足实现thinker项目中90%以上列表需要的效果, 避免定义多个TableViewCell子类.
+  -------------------------------------------------------------------------------------
+  |<-padding->图片(可选)<- ->标题+内容(可多行)<- ->按钮(可选,可多行)<- ->箭头(可选)<-padding->|
+  -------------------------------------------------------------------------------------
+ */
 /// frame layout cell
 public class PerformanceTableCell: UITableViewCell, TableCell {
     
@@ -108,9 +114,11 @@ public enum BoundsOptions {
     case fitsToWidth(CGFloat)
     case constant(CGSize)
 }
+
 private var accessorySize: CGSize {
     return BaseUIKitResource.accessory?.size ?? CGSize.zero
 }
+
 public struct PerformanceTableCellViewModel: TableCellViewModel {
     
     public var cellClass: AnyClass = PerformanceTableCell.self
