@@ -37,3 +37,18 @@ PTBaseKit/
 |  |
 |  +- Controllers <-- demo页面
 ```
+
+ # 模块介绍:
+ 
+ # protocol => TableContoller & class => CommonTableController
+ 
+ TableController是针对列表功能抽象出来的协议, 与之关联的还有TableCell和TableCellViewModel协议.
+ thinker vc开发项目中的列表页面几乎都是CommonTableController类, 它遵守TableController协议, 内部通过TableView和RJRefresh组合成基本的上下拉加载, 另外提供简单的配置函数来给使用者对页面的顶部和底部添加UI组件, 以及数据为空时候的提示.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
