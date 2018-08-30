@@ -48,9 +48,29 @@ PTBaseKit/
   - 使用者也可以直接使用`PerformanceTableCell`, 它几乎兼容thinker目前所有列表的显示需要, 而且它使用了比较好理解的fram计算来实现layout. 这样除了提供不错的滑动性能, 也让使用者根据项目变更的情况较快修改, 比起ASDK这种滑动性能极佳可是又难上手的框架要好.
   - 专注`SectionViewModel/TableCellViewModel`的产生和变化, 它们以数组的形式传入`CommonTableController`, 根据数组中元素顺序的不同, `CommonTableController`的显示内容就会有相应变化.
  
+ UIKitTableController.swift文件中有一个调用`CommonTableController`的例子:
  
- 
- 
+ ```
+ CommonTableController()
+        .setupTableView(with: .sepratorStyle(.singleLine))
+        .performWhenReload { (_table) in
+            DispatchQueue.global()
+                .rx_async(with: ())
+                .flatMap { Observable.just(fakeFetchData()) }
+                .flatMap { DispatchQueue.main.rx_async(with: $0) }
+                .subscribe(onNext: { _table.reload(withSectionViewModels: $0) })
+                .disposed(by: _table)
+        }
+        .performWhenLoadMore { (_table) in
+            DispatchQueue.global()
+                .rx_async(with: ())
+                .flatMap { Observable.just(fakeFetchData()) }
+                .flatMap { DispatchQueue.main.rx_async(with: $0) }
+                .subscribe(onNext: { _table.loadMore(withSectionViewModels: $0, isLast: true) })
+                .disposed(by: _table)
+    }
+ ```
+ 其中`performWhenReload`和`performWhenLoadMore`分别用于传入加载操作, 需要调用者自己结束加载. 回调闭包中有一个参数正是`CommonTableController`本身.
  
  
  
