@@ -42,11 +42,11 @@ PTBaseKit/
  
  TableController是针对列表功能抽象出来的协议, 与之关联的还有TableCell, TableSectionViewModel和TableCellViewModel协议. 整体上是一个MVVM的设计, 把TableCell的适配从Controller分离出来, TableController专注于Table的加载动作, TableCellViewModel用于中转Model->Cell的数据以及持有Cell的一些交互回调.
  
- thinker vc开发项目中的列表页面几乎都是CommonTableController类, 它遵守TableController协议, 内部通过TableView和RJRefresh组合成基本的上下拉加载, 另外提供简单的配置函数来给使用者对页面的顶部和底部添加UI组件, 以及数据为空时候的提示.
+ thinker vc开发项目中的列表页面几乎都是`CommonTableController`类, 它遵守`TableController`协议, 内部通过TableView和RJRefresh组合成基本的上下拉加载, 另外提供简单的配置函数来给使用者对页面的顶部和底部添加UI组件, 以及数据为空时候的提示.
  
-  - 使用者需要创建一个列表界面的时候可以直接使用CommonTableController, 它提供的接口可以应付大部分使用场景, 而且数据加载逻辑以及组件加载逻辑都经过 了thinker验证. 这样有利于避免创建多个ViewController带来的维护高成本和低代码复用.
-  - 使用者也可以直接使用PerformanceTableCell, 它几乎兼容thinker目前所有列表的显示需要, 而且它使用了比较好理解的fram计算来实现layout. 这样除了提供不错的滑动性能, 也让使用者根据项目变更的情况较快修改, 比起ASDK这种滑动性能极佳可是又难上手的框架要好.
-  - 专注SectionViewModel/TableCellViewModel的产生和变化, 它们以数组的形式传入CommonTableController, 根据数组中元素顺序的不同, CommonTableController的显示内容就会有相应变化.
+  - 使用者需要创建一个列表界面的时候可以直接使用`CommonTableController`, 它提供的接口可以应付大部分使用场景, 而且数据加载逻辑以及组件加载逻辑都经过 了thinker验证. 这样有利于避免创建多个ViewController带来的维护高成本和低代码复用.
+  - 使用者也可以直接使用`PerformanceTableCell`, 它几乎兼容thinker目前所有列表的显示需要, 而且它使用了比较好理解的fram计算来实现layout. 这样除了提供不错的滑动性能, 也让使用者根据项目变更的情况较快修改, 比起ASDK这种滑动性能极佳可是又难上手的框架要好.
+  - 专注`SectionViewModel/TableCellViewModel`的产生和变化, 它们以数组的形式传入`CommonTableController`, 根据数组中元素顺序的不同, `CommonTableController`的显示内容就会有相应变化.
  
  
  
