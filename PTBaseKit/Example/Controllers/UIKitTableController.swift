@@ -9,23 +9,8 @@
 import UIKit
 import RxSwift
 
-private let testPicUrls: [String] = [
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-1.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=b9f6fe4d02da6defbbde24cda0e4ff7b",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-2.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=7c8e24841bf82a0ac3a05bd539f8385f",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-3.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=b68cdacffd1240d61d4549cf211b642f",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-4.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=240968fc6d38fa5fc4162d2fef021fac",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-5.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=9ec027822dd98f4ff513f1935f1d9be3",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-6.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=fc5ac476b1067a9503a7f1141099eefd",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-7.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=1e87461d5f5e999ec777523141e63349",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-8.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=0dcc804f28bb996ae8e704b95d9e95c6",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-9.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=ea25e3e0827201668a2fa3eed1d004a7",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-10.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=189d7e5f34f0af946f7986c62f3fa94f",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-12.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=53377a59dd167d252787022c5df4656b",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-012.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=6df3d68e9681b0714924377a97d31845",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-13.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=a1730532c4621f1c9faaf2e814af1010",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-14.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=df369d7bb4a39a3c3bb04500df23a0c0",
-    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-15.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=01a783a4e5b2e8e83e5f650559499de8"]
 
+/// CommonTableController的演示页面
 class UIKitTableController: BaseController {
     
     override func performSetup() {
@@ -44,7 +29,7 @@ private func testTableController(on controller: UIViewController) {
         .performWhenReload { (_table) in
             DispatchQueue.global()
                 .rx_async(with: ())
-                .flatMap { Observable.just(createSectionViewModels()) }
+                .flatMap { Observable.just(fakeFetchData()) }
                 .flatMap { DispatchQueue.main.rx_async(with: $0) }
                 .subscribe(onNext: { _table.reload(withSectionViewModels: $0) })
                 .disposed(by: _table)
@@ -52,7 +37,7 @@ private func testTableController(on controller: UIViewController) {
         .performWhenLoadMore { (_table) in
             DispatchQueue.global()
                 .rx_async(with: ())
-                .flatMap { Observable.just(createSectionViewModels()) }
+                .flatMap { Observable.just(fakeFetchData()) }
                 .flatMap { DispatchQueue.main.rx_async(with: $0) }
                 .subscribe(onNext: { _table.loadMore(withSectionViewModels: $0, isLast: true) })
                 .disposed(by: _table)
@@ -66,7 +51,7 @@ private func testTableController(on controller: UIViewController) {
     
 }
 
-private func createSectionViewModels() -> [TableSectionViewModel] {
+private func fakeFetchData() -> [TableSectionViewModel] {
     let numberOfSection = 20
     return (0..<numberOfSection).map { _ in CommonTableSectionViewModel(header: DefaultTableSectionHeaderFooterViewModel(),
                                                                         footer: DefaultTableSectionHeaderFooterViewModel(),
@@ -116,3 +101,20 @@ var subTitles: [NSMutableAttributedString] {
             "\nsub title aligent right".attributed([.paragraphStyle(lineSpacing: nil, alignment: .right)]),
             "\nlong long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long long sub title ".attributed([.textColor(UIColor.tk.lightGray), .paragraphStyle(lineSpacing: nil, alignment: .natural)])]
 }
+
+private let testPicUrls: [String] = [
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-1.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=b9f6fe4d02da6defbbde24cda0e4ff7b",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-2.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=7c8e24841bf82a0ac3a05bd539f8385f",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-3.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=b68cdacffd1240d61d4549cf211b642f",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-4.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=240968fc6d38fa5fc4162d2fef021fac",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-5.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=9ec027822dd98f4ff513f1935f1d9be3",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-6.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=fc5ac476b1067a9503a7f1141099eefd",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-7.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=1e87461d5f5e999ec777523141e63349",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-8.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=0dcc804f28bb996ae8e704b95d9e95c6",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-9.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=ea25e3e0827201668a2fa3eed1d004a7",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-10.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=189d7e5f34f0af946f7986c62f3fa94f",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-12.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=53377a59dd167d252787022c5df4656b",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-012.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=6df3d68e9681b0714924377a97d31845",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-13.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=a1730532c4621f1c9faaf2e814af1010",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-14.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=df369d7bb4a39a3c3bb04500df23a0c0",
+    "https://hypebeast.imgix.net/https%3A%2F%2Fhk.hypebeast.com%2Ffiles%2F2018%2F04%2Fsupreme-rimowa-spring-summer-2018-street-style-15.jpg?auto=compress%2Cformat&fit=clip&ixlib=php-1.1.0&q=90&w=3510&s=01a783a4e5b2e8e83e5f650559499de8"]
