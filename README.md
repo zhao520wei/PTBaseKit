@@ -76,13 +76,13 @@ PTBaseKit/
  ```
  其中`performWhenReload`和`performWhenLoadMore`分别用于传入加载操作, 需要调用者自己结束加载. 回调闭包中有一个参数正是`CommonTableController`本身.例子中使用了`RxSwift`三方框架配合展示了这个加载过程, `fakeFetchData`替代了项目中的网络请求以及Model->ViewModel的操作, 实际上thinker的项目中就是按照这个方式实现, 实现这一步操作的是各个业务模块对应的`Service`.
  
-  # PerformanceTableCell(有的旧项目叫CommonTableCell)
-  `PerformanceTableCell`是在`TableController`协议基础上实现的一个UITableViewCell子类, 根据thinker项目总结而来. 
+  # CommonTableCell
+  `CommonTableCell`是在`TableController`协议基础上实现的一个UITableViewCell子类, 根据thinker项目总结而来. 
   - 它已经几乎兼容thinker目前所有列表的显示需要, 订单, 用户信息, 活动, 设置, 消息等.
   - 只需要传入不同的参数来创建ViewModel, 并传入`CommonTableController`, 就可以得到各种自适应高度的界面, 这个高度是其`ViewModel`初始化的时候实现的, 并不需要使用者自己计算.
   - 使用了比较好理解的fram计算来实现layout. 这样除了提供不错的滑动性能, 也让使用者根据项目变更的情况较快修改, 比起ASDK这种滑动性能极佳可是又难上手的框架, 或者直接使用`SnapKit`来牺牲性能要来得好.
   
-  为了高内聚低耦合, 在使用的时候应该把Model->ViewModel这一步操作抽出, 不要添加`init`函数到`PerformanceTableCell`的ViewModel代码中, 用例里面由于没有业务Model, 只是写了一个单独函数产生ViewModel:
+  为了遵守高内聚低耦合, 在使用的时候应该把Model->ViewModel这一步操作抽出, 不要添加`init`函数到`CommonTableCell`的ViewModel代码中, 用例里面由于没有业务Model, 只是写了一个单独函数产生ViewModel:
   ```
   private func createCellViewModels() -> [TableCellViewModel] {
     return
@@ -90,7 +90,7 @@ PTBaseKit/
             .map { index -> TableCellViewModel in
                 let imageIndex = Int(arc4random_uniform(4))
                 // let cellHiehgt = (images[imageIndex]?.size.height ?? 45) + 20
-                var viewModel = PerformanceTableCellViewModel(head: images[imageIndex],
+                var viewModel = CommonTableCellViewModel(head: images[imageIndex],
                                                               title: cellTitles[Int(arc4random_uniform(4))].appending(subTitles[Int(arc4random_uniform(4))]),
                                                               tail: genButtonContentOptions(),
                                                               accessorable: index%2 == 1,
