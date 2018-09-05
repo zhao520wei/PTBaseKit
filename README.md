@@ -105,7 +105,7 @@ PTBaseKit/
   实际操作可以是这样:
   
   ```
-  class SomeModel {
+ class SomeModel {
     ...
     ...
     ...
@@ -126,7 +126,12 @@ extension SomeModel {
         
         let boundsOption = ...
         
-         return CommonTableCellViewModel(head: head, title: title, tail: tail, backgroundCss: background, accessorable: accessorable, boundsOption: boundsOption)
+        return CommonTableCellViewModel(head: head,
+                                        title: title,
+                                        tail: tail,
+                                        backgroundCss: background,
+                                        accessorable: accessorable,
+                                        boundsOption: boundsOption)
     }
 }
   ```
