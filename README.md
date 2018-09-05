@@ -114,6 +114,8 @@ PTBaseKit/
 extension SomeModel {
     func toCommonTableCellViewModel() -> CommonTableCellViewModel {
         
+        // 实行self -> CommonTableCellViewModel的转换
+        
         let head = ...
         
         let title = ...
@@ -135,3 +137,4 @@ extension SomeModel {
     }
 }
   ```
+  并且每个Model对ViewModel的转换, 最好都是在子线程中完成, 就像用例里的一样.
