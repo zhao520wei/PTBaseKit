@@ -64,7 +64,7 @@ private func createCellViewModels() -> [TableCellViewModel] {
             .map { index -> TableCellViewModel in
                 let imageIndex = Int(arc4random_uniform(4))
                 // let cellHiehgt = (images[imageIndex]?.size.height ?? 45) + 20
-                var viewModel = PerformanceTableCellViewModel(head: images[imageIndex],
+                var viewModel = CommonTableCellViewModel(head: images[imageIndex],
                                                               title: cellTitles[Int(arc4random_uniform(4))].appending(subTitles[Int(arc4random_uniform(4))]),
                                                               tail: genButtonContentOptions(),
                                                               accessorable: index%2 == 1,

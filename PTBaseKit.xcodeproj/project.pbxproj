@@ -34,7 +34,7 @@
 		959BBF322111F4B400106646 /* TextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEDE2111F4B400106646 /* TextFieldController.swift */; };
 		959BBF332111F4B400106646 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEDF2111F4B400106646 /* UIBarButtonItem+Extension.swift */; };
 		959BBF342111F4B400106646 /* runtime+UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEE02111F4B400106646 /* runtime+UIControl.swift */; };
-		959BBF392111F4B500106646 /* PerformanceTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEE82111F4B400106646 /* PerformanceTableCell.swift */; };
+		959BBF392111F4B500106646 /* CommonTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEE82111F4B400106646 /* CommonTableCellViewModel.swift */; };
 		959BBF3A2111F4B500106646 /* CommonTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEEA2111F4B400106646 /* CommonTableController.swift */; };
 		959BBF3B2111F4B500106646 /* DefaultTableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEEC2111F4B400106646 /* DefaultTableSection.swift */; };
 		959BBF3C2111F4B500106646 /* ListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEEE2111F4B400106646 /* ListController.swift */; };
@@ -120,7 +120,7 @@
 		959BBEDE2111F4B400106646 /* TextFieldController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldController.swift; sourceTree = "<group>"; };
 		959BBEDF2111F4B400106646 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		959BBEE02111F4B400106646 /* runtime+UIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "runtime+UIControl.swift"; sourceTree = "<group>"; };
-		959BBEE82111F4B400106646 /* PerformanceTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTableCell.swift; sourceTree = "<group>"; };
+		959BBEE82111F4B400106646 /* CommonTableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonTableCellViewModel.swift; sourceTree = "<group>"; };
 		959BBEEA2111F4B400106646 /* CommonTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonTableController.swift; sourceTree = "<group>"; };
 		959BBEEC2111F4B400106646 /* DefaultTableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultTableSection.swift; sourceTree = "<group>"; };
 		959BBEEE2111F4B400106646 /* ListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListController.swift; sourceTree = "<group>"; };
@@ -360,7 +360,7 @@
 		959BBEE32111F4B400106646 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
-				959BBEE82111F4B400106646 /* PerformanceTableCell.swift */,
+				959BBEE82111F4B400106646 /* CommonTableCellViewModel.swift */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -828,7 +828,7 @@
 				959BBF232111F4B400106646 /* AMap+MapAdapter.swift in Sources */,
 				959BBF272111F4B400106646 /* BaseUIKitResource.swift in Sources */,
 				959BBF4A2111F4B500106646 /* DispatchQueue+RxSwift.swift in Sources */,
-				959BBF392111F4B500106646 /* PerformanceTableCell.swift in Sources */,
+				959BBF392111F4B500106646 /* CommonTableCellViewModel.swift in Sources */,
 				959BBF3A2111F4B500106646 /* CommonTableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

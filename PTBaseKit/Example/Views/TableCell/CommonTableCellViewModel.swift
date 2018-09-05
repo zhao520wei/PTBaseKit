@@ -38,7 +38,7 @@ public class PerformanceTableCell: UITableViewCell, TableCell {
     
     public func setup(with viewModel: TableCellViewModel) {
         
-        guard let _viewModel = viewModel as? PerformanceTableCellViewModel else {return}
+        guard let _viewModel = viewModel as? CommonTableCellViewModel else {return}
         
         self.viewModel = _viewModel
         
@@ -59,7 +59,7 @@ public class PerformanceTableCell: UITableViewCell, TableCell {
             self.tail.isHidden = true
         }
         
-        self.tail.isUserInteractionEnabled = (self.viewModel as? PerformanceTableCellViewModel)?.tailClicked != nil
+        self.tail.isUserInteractionEnabled = (self.viewModel as? CommonTableCellViewModel)?.tailClicked != nil
         
         self.accessory.isHidden = !_viewModel.accessorable
         
@@ -77,7 +77,7 @@ public class PerformanceTableCell: UITableViewCell, TableCell {
     }
     
     @objc dynamic private func clickDetail(_ sender: UIButton) {
-        (self.viewModel as? PerformanceTableCellViewModel)?.tailClicked?()
+        (self.viewModel as? CommonTableCellViewModel)?.tailClicked?()
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -119,7 +119,7 @@ private var accessorySize: CGSize {
     return BaseUIKitResource.accessory?.size ?? CGSize.zero
 }
 
-public struct PerformanceTableCellViewModel: TableCellViewModel {
+public struct CommonTableCellViewModel: TableCellViewModel {
     
     public var cellClass: AnyClass = PerformanceTableCell.self
     
