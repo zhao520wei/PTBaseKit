@@ -79,7 +79,7 @@ extension String {
                 case is UILabel:
                     ($0 as! UILabel).text = self
                 case is UIButton:
-                    ($0 as! UIButton).setTitle(self, for: UIControlState.normal)
+                    ($0 as! UIButton).setTitle(self, for: UIControl.State.normal)
                 case is UITextView:
                     ($0 as! UITextView).text = self
                 case is UITextField:
@@ -107,7 +107,7 @@ extension NSAttributedString {
                 case is UITextField:
                     ($0 as! UITextField).attributedText = self
                 case is UIButton:
-                    ($0 as! UIButton).setAttributedTitle(self, for: UIControlState.normal)
+                    ($0 as! UIButton).setAttributedTitle(self, for: UIControl.State.normal)
                 default:
                     break
                 }

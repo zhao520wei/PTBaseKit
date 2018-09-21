@@ -49,11 +49,11 @@ public class PerformanceTableCell: UITableViewCell, TableCell {
         switch _viewModel.tail {
         case .imageSource(let source)?:
             self.tail.setupImage(with: source)
-            self.tail.setAttributedTitle(nil, for: UIControlState.normal)
+            self.tail.setAttributedTitle(nil, for: UIControl.State.normal)
             self.tail.isHidden = false
         case .attributedString(let attr)?:
-            self.tail.setImage(nil, for: UIControlState.normal)
-            self.tail.setAttributedTitle(attr, for: UIControlState.normal)
+            self.tail.setImage(nil, for: UIControl.State.normal)
+            self.tail.setAttributedTitle(attr, for: UIControl.State.normal)
             self.tail.isHidden = false
         default:
             self.tail.isHidden = true
@@ -80,10 +80,10 @@ public class PerformanceTableCell: UITableViewCell, TableCell {
         (self.viewModel as? CommonTableCellViewModel)?.tailClicked?()
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.tail.addTarget(self, action: #selector(clickDetail(_:)), for: UIControlEvents.touchUpInside)
+        self.tail.addTarget(self, action: #selector(clickDetail(_:)), for: UIControl.Event.touchUpInside)
         
         self.tail.contentHorizontalAlignment = .right
         

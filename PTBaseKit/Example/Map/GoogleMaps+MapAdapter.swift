@@ -83,8 +83,8 @@ public class GoogleMapsAdapter: NSObject, MapAdapter {
         _map.isIndoorEnabled = false
         self.googleMap = _map
         self.googleMap.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.new, context: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(sender:)), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(sender:)), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(sender:)), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(sender:)), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     deinit {
@@ -93,9 +93,9 @@ public class GoogleMapsAdapter: NSObject, MapAdapter {
     
     @objc func handleNotification(sender: Notification) {
         switch sender.name {
-        case .UIApplicationWillResignActive:
+        case UIApplication.willResignActiveNotification:
             self.enable(false)
-        case .UIApplicationDidBecomeActive:
+        case UIApplication.didBecomeActiveNotification:
             self.enable(true)
         default:
             break
@@ -324,7 +324,7 @@ extension GoogleMapsAdapter {
 extension GoogleMapsAdapter: GMSMapViewDelegate {
     public func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
         self.didIdleAtLocation.onNext((adapter: self, location: position.target))
-        self.perform(#selector(self.enablePerformanceMode(_:)), with: false, afterDelay: 0.5, inModes: [RunLoopMode.defaultRunLoopMode])
+        self.perform(#selector(self.enablePerformanceMode(_:)), with: false, afterDelay: 0.5, inModes: [RunLoop.Mode.default])
     }
     public func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         Thread.cancelPreviousPerformRequests(withTarget: self, selector: #selector(self.enablePerformanceMode(_:)), object: nil)

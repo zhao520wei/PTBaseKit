@@ -40,15 +40,15 @@ public class MapManager {
     
     public init (withMap map: Map) {
         self.map = map
-        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(sender:)), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(sender:)), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(sender:)), name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(sender:)), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     @objc private func handleNotification(sender: Notification) {
         switch sender.name {
-        case .UIApplicationWillResignActive:
+        case UIApplication.willResignActiveNotification:
             self.enableMap(false)
-        case .UIApplicationDidBecomeActive:
+        case UIApplication.didBecomeActiveNotification:
             self.enableMap(true)
         default:
             break

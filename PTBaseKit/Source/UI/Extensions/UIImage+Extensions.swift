@@ -32,7 +32,7 @@ extension UIImage {
     /// - Parameter quality: 压缩效果 0~1
     /// - Returns: 压缩后的实例
     public func compress(quality: CGFloat) -> UIImage {
-        return UIImage(data: UIImageJPEGRepresentation(self, quality)!)!
+        return UIImage(data: self.jpegData(compressionQuality: quality)!)!
     }
 
 }

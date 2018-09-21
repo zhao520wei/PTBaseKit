@@ -13,7 +13,7 @@ import MJRefresh
 
 public enum TableViewOptions {
     case allowMultiSelection(Bool)
-    case sepratorStyle(UITableViewCellSeparatorStyle)
+    case sepratorStyle(UITableViewCell.SeparatorStyle)
 }
 
 public class CommonTableController: BaseController, TableController {
@@ -34,9 +34,9 @@ public class CommonTableController: BaseController, TableController {
     
     // view
     
-    public let tableView: UITableView = UITableView(frame: CGRect.zero, style: UITableViewStyle.grouped)
+    public let tableView: UITableView = UITableView(frame: CGRect.zero, style: UITableView.Style.grouped)
     
-    fileprivate var separatorStyle: UITableViewCellSeparatorStyle = .none
+    fileprivate var separatorStyle: UITableViewCell.SeparatorStyle = .none
     
     public var header: UIView? = nil
     
@@ -399,7 +399,7 @@ extension CommonTableController {
     }
     
     private func reloadTableView() {
-        self.tableView.performSelector(onMainThread: #selector(tableView.reloadData), with: nil, waitUntilDone: true, modes: [RunLoopMode.defaultRunLoopMode.rawValue])
+        self.tableView.performSelector(onMainThread: #selector(tableView.reloadData), with: nil, waitUntilDone: true, modes: [RunLoop.Mode.default.rawValue])
     }
 }
 

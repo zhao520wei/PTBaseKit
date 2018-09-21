@@ -71,7 +71,7 @@ extension UIViewController{
             confirmAction?()
         }
         if !force {
-            controller.addAction(UIAlertAction(title: BaseUIKitResource.alertCancelTitle, style: UIAlertActionStyle.cancel, handler: nil))
+            controller.addAction(UIAlertAction(title: BaseUIKitResource.alertCancelTitle, style: UIAlertAction.Style.cancel, handler: nil))
         }
         
         !warning ? confirmAction.setValue(UIColor.tk.main, forKey: "_titleTextColor") : nil

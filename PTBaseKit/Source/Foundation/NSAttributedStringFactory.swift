@@ -32,7 +32,7 @@ extension String {
     
     public func attributed(_ options: [AttributedStringOptions] = [.font(15.customRegularFont), .textColor(UIColor.tk.black), .paragraphStyle(lineSpacing: nil, alignment: nil)]) -> NSMutableAttributedString {
         
-        var attributes: [NSAttributedStringKey: Any] = [:]
+        var attributes: [NSAttributedString.Key: Any] = [:]
         
         var textColor: UIColor = UIColor.tk.black
         
@@ -59,19 +59,19 @@ extension String {
                 paragraphStyle.tailIndent = tail
             case .underLine(let style, let color):
                 if let _style = style {
-                    attributes[NSAttributedStringKey.underlineStyle] = _style.rawValue
+                    attributes[NSAttributedString.Key.underlineStyle] = _style.rawValue
                 }
                 if let _color = color {
-                    attributes[NSAttributedStringKey.underlineColor] = _color
+                    attributes[NSAttributedString.Key.underlineColor] = _color
                 }
             }
         }
         // fix
-        attributes[NSAttributedStringKey.paragraphStyle] = paragraphStyle
+        attributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
         
-        attributes[NSAttributedStringKey.foregroundColor] = textColor
+        attributes[NSAttributedString.Key.foregroundColor] = textColor
         
-        attributes[NSAttributedStringKey.font] = textFont
+        attributes[NSAttributedString.Key.font] = textFont
         
         return NSMutableAttributedString(string: self, attributes: attributes)
     }
@@ -93,13 +93,13 @@ public func +<T: NSMutableAttributedString>(left: T, option: AttributedStringOpt
     left.enumerateAttributes(in: NSRange(location: 0, length: left.string.count), options: []) { [weak left] (originalAttribute, range, ptr) in
         var newAttribute = originalAttribute
         
-        var paragraphStyle = (newAttribute[NSAttributedStringKey.paragraphStyle] as? NSMutableParagraphStyle) ?? NSMutableParagraphStyle()
+        var paragraphStyle = (newAttribute[NSAttributedString.Key.paragraphStyle] as? NSMutableParagraphStyle) ?? NSMutableParagraphStyle()
         
         switch option {
         case .textColor(let color):
-            newAttribute[NSAttributedStringKey.foregroundColor] = color
+            newAttribute[NSAttributedString.Key.foregroundColor] = color
         case .font(let font):
-            newAttribute[NSAttributedStringKey.font] = font
+            newAttribute[NSAttributedString.Key.font] = font
         case .paragraphStyle(let lineSpacing, let alignment):
             if let _alignment = alignment {
                 paragraphStyle.alignment = _alignment
@@ -113,10 +113,10 @@ public func +<T: NSMutableAttributedString>(left: T, option: AttributedStringOpt
             paragraphStyle.tailIndent = tail
         case .underLine(let style, let color):
             if let _style = style {
-                newAttribute[NSAttributedStringKey.underlineStyle] = _style.rawValue
+                newAttribute[NSAttributedString.Key.underlineStyle] = _style.rawValue
             }
             if let _color = color {
-                newAttribute[NSAttributedStringKey.underlineColor] = _color
+                newAttribute[NSAttributedString.Key.underlineColor] = _color
             }
         }
         left?.addAttributes(newAttribute, range: range)

@@ -39,7 +39,7 @@ public class WebController: BaseController {
     public private(set) lazy var webView: WKWebView = WKWebView(frame: .zero)
     
     lazy var progressBar: UIProgressView = {
-        let bar = UIProgressView(progressViewStyle: UIProgressViewStyle.bar)
+        let bar = UIProgressView(progressViewStyle: UIProgressView.Style.bar)
         bar.tintColor = UIColor.tk.main
         return bar
     }()

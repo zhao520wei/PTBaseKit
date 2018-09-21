@@ -43,7 +43,7 @@ open class BaseController: UIViewController {
         self.perform(NSSelectorFromString("performSetup"),
                      with: nil,
                      afterDelay: 0.1,
-                     inModes: [RunLoopMode.defaultRunLoopMode])
+                     inModes: [RunLoop.Mode.default])
     }
     
     private func preSetup() {
@@ -56,8 +56,8 @@ open class BaseController: UIViewController {
         {
             self.navigationController?.navigationBar.barTintColor = UIColor.tk.white
             self.navigationController?.navigationBar.tintColor = UIColor.tk.black
-            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.tk.black,
-                                                                            NSAttributedStringKey.font: 18.5.customRegularFont]
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.tk.black,
+                                                                            NSAttributedString.Key.font: 18.5.customRegularFont]
             self.navigationController?.navigationBar.isTranslucent = false
             self.navigationController?.navigationBar.shadowImage = UIImage()
             

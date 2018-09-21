@@ -15,7 +15,7 @@ class WebURLController: BaseController {
     lazy var input: UITextField = ViewFactory.createTextField()
     
     lazy var submit: UIButton = {
-        let item = UIButton(type: UIButtonType.system)
+        let item = UIButton(type: UIButton.ButtonType.system)
         item.setAttributedTitle("Browse".attributed([.textColor(UIColor.tk.main)]), for: .normal)
         item.setAttributedTitle("Browse".attributed([.textColor(UIColor.tk.lightGray)]), for: .disabled)
         return item
@@ -57,7 +57,7 @@ class WebURLController: BaseController {
             .bind(to: self.submit.rx.isEnabled)
             .disposed(by: self)
         
-        self.submit.rx.controlEvent(UIControlEvents.touchUpInside)
+        self.submit.rx.controlEvent(UIControl.Event.touchUpInside)
             .subscribe (onNext: {  [weak self] () in
                 if let _self = self, let text = self?.input.text {
                     _self.internalSubmit.onNext(text)

@@ -110,7 +110,7 @@ extension UIViewController {
         controller.contentLabel.attributedText = content
         controller.contentLabel.numberOfLines = 0
         controller.confirmAction = confirmAction
-        controller.confirmBtn.setAttributedTitle(confirmTitle, for: UIControlState.normal)
+        controller.confirmBtn.setAttributedTitle(confirmTitle, for: UIControl.State.normal)
         self.present(controller, animated: true, completion: nil)
         return controller
     }

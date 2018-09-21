@@ -134,7 +134,7 @@ public class DefaultTableCellNodeModel: TableCellNodeModel {
         case .imageSource(let source)?:
             break
         case .attributedString(let attr)?:
-            _node.tail.setAttributedTitle(attr, for: UIControlState.normal)
+            _node.tail.setAttributedTitle(attr, for: UIControl.State.normal)
         default: break
         }
         _node.accessory.isHidden = !self.accessorable

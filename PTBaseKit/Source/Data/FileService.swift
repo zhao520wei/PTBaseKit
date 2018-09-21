@@ -70,7 +70,7 @@ public class FileService {
     
     public func create(image: UIImage, fileName: String) -> Observable<String> {
         guard
-            let _data = UIImageJPEGRepresentation(image, 0.7) // PNG: UIImagePNGRepresentation(image)
+            let _data = image.jpegData(compressionQuality: 0.7) // PNG: UIImagePNGRepresentation(image)
             else
         {
             return Observable.error(NSError(domain: "Faild to convert" + image.description + "to data", code: 0 , userInfo: nil))

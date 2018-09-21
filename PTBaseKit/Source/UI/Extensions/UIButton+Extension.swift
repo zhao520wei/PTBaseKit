@@ -12,7 +12,7 @@ import RxSwift
 
 extension UIButton {
     public func performWhenClick(action: @escaping ()->Void) -> Disposable {
-        return self.rx.controlEvent(UIControlEvents.touchUpInside).subscribe(onNext: { (_) in
+        return self.rx.controlEvent(UIControl.Event.touchUpInside).subscribe(onNext: { (_) in
             action()
         }, onError: nil, onCompleted: nil, onDisposed: nil)
     }
@@ -120,7 +120,7 @@ extension UIButton {
         
         self.timer?.invalidate()
         self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(UIButton.changeTime(_:)), userInfo: nil, repeats: true)
-        RunLoop.current.add(self.timer!, forMode: RunLoopMode.commonModes)
+        RunLoop.current.add(self.timer!, forMode: RunLoop.Mode.common)
     }
     
     /// 返回一个Observable,在倒计时完成后会发出信号, 如果不在此处订阅, 倒计时结束后按钮的isEnable会恢复到倒计时前的状态

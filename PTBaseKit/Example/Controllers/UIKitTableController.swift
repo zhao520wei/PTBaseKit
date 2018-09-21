@@ -47,7 +47,7 @@ private func testTableController(on controller: UIViewController) {
     
     table.view.snp.makeConstraints {$0.edges.equalToSuperview()}
     
-    controller.addChildViewController(table)
+    controller.addChild(table)
     
 }
 

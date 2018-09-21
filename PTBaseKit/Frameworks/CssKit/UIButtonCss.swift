@@ -10,19 +10,19 @@ import Foundation
 import UIKit
 
 
-public func titleCss(_ title:String,_ state: UIControlState = .normal) -> UIButtonCss {
+public func titleCss(_ title:String,_ state: UIControl.State = .normal) -> UIButtonCss {
     return {
         $0.setTitle(title, for: state)
     }
 }
 
-public func titleColorCss(_ color: UIColor,_ state: UIControlState = .normal) -> UIButtonCss {
+public func titleColorCss(_ color: UIColor,_ state: UIControl.State = .normal) -> UIButtonCss {
     return {
         $0.setTitleColor(color, for: state)
     }
 }
 
-public func bgImgCss(_ color: UIColor,_ state: UIControlState = .normal) -> UIButtonCss {
+public func bgImgCss(_ color: UIColor,_ state: UIControl.State = .normal) -> UIButtonCss {
     return {
         $0.setBackgroundImage(color.translateIntoImage(), for: state)
     }

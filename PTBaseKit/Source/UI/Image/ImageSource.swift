@@ -142,7 +142,7 @@ extension UIButton: ImageSetable {
     
     public func setupImage(with imageSource: ImageSource?) {
         
-        guard let source = imageSource else {return self.setImage(nil, for: UIControlState.normal)}
+        guard let source = imageSource else {return self.setImage(nil, for: UIControl.State.normal)}
         
         if
             let imageView = self.imageView,
@@ -158,15 +158,15 @@ extension UIButton: ImageSetable {
         {
         case .string, .url:
             self.kf.setImage(with: source.rawData as? Resource,
-                             for: UIControlState.normal,
+                             for: UIControl.State.normal,
                              placeholder: imageSource?.placeHolder?.imageValue,
                              options: [.scaleFactor(UIScreen.main.scale)], //图片scale转换
                              progressBlock: nil,
                              completionHandler: nil)
         case .data:
-            self.setImage(UIImage(data: (source.rawData as! Data)), for: UIControlState.normal)
+            self.setImage(UIImage(data: (source.rawData as! Data)), for: UIControl.State.normal)
         case .image:
-            self.setImage(source.rawData as? UIImage, for: UIControlState.normal)
+            self.setImage(source.rawData as? UIImage, for: UIControl.State.normal)
         }
     }
 }

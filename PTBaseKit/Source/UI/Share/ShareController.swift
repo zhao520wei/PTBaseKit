@@ -63,7 +63,7 @@ public class ShareController: BaseController {
         
         self.titleLabel.attributedText = "分享到".attributedString(font: 14.customRegularFont, color: UIColor.tk.gray)
         
-        self.cancelBtn.setAttributedTitle("取消".attributedString(font: 20.customRegularFont, color: UIColor.tk.main), for: UIControlState.normal)
+        self.cancelBtn.setAttributedTitle("取消".attributedString(font: 20.customRegularFont, color: UIColor.tk.main), for: UIControl.State.normal)
         self.cancelBtn.backgroundColor = UIColor.white
         self.cancelBtn += 12.cornerRadiusCss
         self.cancelBtn.performWhenClick { [weak self] in

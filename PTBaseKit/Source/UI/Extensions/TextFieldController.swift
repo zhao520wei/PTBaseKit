@@ -65,7 +65,7 @@ public class TextFieldController: BaseController {
     
     private func bindObservable() {
         self.textField.rx
-            .controlEvent(UIControlEvents.editingChanged)
+            .controlEvent(UIControl.Event.editingChanged)
             .subscribe(onNext: { [unowned self] () in
                 guard
                     let text = self.textField.text,
@@ -98,8 +98,8 @@ extension TextFieldController {
         self.textField.keyboardType = keyboardType
         self.maximumLength = maximumLength
         if let _doneBtnTitle = doneBtnTitle {
-            self.doneButton.setAttributedTitle(_doneBtnTitle.attributedString(color: UIColor.tk.main), for: UIControlState.normal)
-            self.doneButton.setAttributedTitle(_doneBtnTitle.attributedString(color: UIColor.tk.lightGray), for: UIControlState.disabled)
+            self.doneButton.setAttributedTitle(_doneBtnTitle.attributedString(color: UIColor.tk.main), for: UIControl.State.normal)
+            self.doneButton.setAttributedTitle(_doneBtnTitle.attributedString(color: UIColor.tk.lightGray), for: UIControl.State.disabled)
         }
         return self
     }

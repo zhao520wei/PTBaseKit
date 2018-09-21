@@ -33,7 +33,7 @@ private func testTableNodeController(on controller: BaseController) {
     table.tableDidLoadMore.subscribe(onNext: nil, onError: nil).disposed(by: controller)
     
     controller.view.addSubview(table.view)
-    controller.addChildViewController(table)
+    controller.addChild(table)
 }
 
 private func createSectionNodeModels() -> [TableSectionNodeModel] {

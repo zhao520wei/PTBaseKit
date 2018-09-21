@@ -22,7 +22,7 @@ public class LoadingController: BaseController {
         let bar = UIProgressView(frame: CGRect.zero)
         bar.trackTintColor = UIColor.clear
         bar.progressTintColor = UIColor.tk.main
-        bar.progressViewStyle = UIProgressViewStyle.bar
+        bar.progressViewStyle = UIProgressView.Style.bar
         return bar
     }()
     
@@ -92,8 +92,8 @@ extension LoadingController {
         self.progressBar.progress = 0
         self.progressTimer = Timer.scheduledTimer(timeInterval: 1/20, target: self, selector: #selector(performProgress(_:)), userInfo: nil, repeats: true)
         self.timeOutTipsTimer = Timer.scheduledTimer(timeInterval: self.timeOutDuration, target: self, selector: #selector(performTimeout(_:)), userInfo: nil, repeats: false)
-        RunLoop.current.add(self.progressTimer!, forMode: RunLoopMode.commonModes)
-        RunLoop.current.add(self.timeOutTipsTimer!, forMode: RunLoopMode.commonModes)
+        RunLoop.current.add(self.progressTimer!, forMode: RunLoop.Mode.common)
+        RunLoop.current.add(self.timeOutTipsTimer!, forMode: RunLoop.Mode.common)
     }
     
     public func completeAnimation(completion: ((Bool) -> Void)? = nil) {
