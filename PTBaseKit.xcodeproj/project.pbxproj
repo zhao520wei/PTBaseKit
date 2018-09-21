@@ -193,6 +193,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9593001D2154C0710084AF9C /* Processing */ = {
+			isa = PBXGroup;
+			children = (
+				959BBEEE2111F4B400106646 /* ListController.swift */,
+				959BBEF22111F4B400106646 /* ASDisplayKit */,
+			);
+			path = Processing;
+			sourceTree = "<group>";
+		};
 		959BBE952111EE9300106646 = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +228,7 @@
 				959BBECA2111F4B400106646 /* Source */,
 				959BBF1D2111F4B400106646 /* Application */,
 				95FAFBC5211346F800FEA6F5 /* Frameworks */,
+				9593001D2154C0710084AF9C /* Processing */,
 				95A45269212E603F00325960 /* Example */,
 				959BBEA82111EE9400106646 /* Assets.xcassets */,
 				959BBEA52111EE9300106646 /* Main.storyboard */,
@@ -346,7 +356,6 @@
 			children = (
 				959BBEE22111F4B400106646 /* TableController */,
 				959BBEED2111F4B400106646 /* Protocol */,
-				959BBEF22111F4B400106646 /* ASDisplayKit */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -387,7 +396,6 @@
 		959BBEED2111F4B400106646 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				959BBEEE2111F4B400106646 /* ListController.swift */,
 				959BBEEF2111F4B400106646 /* TableController.swift */,
 			);
 			path = Protocol;
