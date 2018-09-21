@@ -276,6 +276,7 @@
 		959BBECA2111F4B400106646 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				959BBF092111F4B400106646 /* CssKit */,
 				959BBECB2111F4B400106646 /* UI */,
 				959BBF032111F4B400106646 /* Foundation */,
 				959BBF172111F4B400106646 /* Map */,
@@ -488,7 +489,8 @@
 				959BBF152111F4B400106646 /* UIControl.swift */,
 				959BBF162111F4B400106646 /* UILabelCss.swift */,
 			);
-			path = CssKit;
+			name = CssKit;
+			path = ../Frameworks/CssKit;
 			sourceTree = "<group>";
 		};
 		959BBF0A2111F4B400106646 /* Operators */ = {
@@ -553,7 +555,6 @@
 		95FAFBC5211346F800FEA6F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				959BBF092111F4B400106646 /* CssKit */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
