@@ -17,13 +17,13 @@ import RxCocoa
   -------------------------------------------------------------------------------------
  */
 /// frame layout cell
-public class DefaultTableCell: UITableViewCell, TableCell {
+open class DefaultTableCell: UITableViewCell, TableCell {
     
     public var viewModel: TableCellViewModel?
     
-    var head: UIImageView = UIImageView()
+    public var head: UIImageView = UIImageView()
     
-    var titleLabel: UILabel = {
+    public var titleLabel: UILabel = {
         
         let label = UILabel()
         
@@ -32,11 +32,11 @@ public class DefaultTableCell: UITableViewCell, TableCell {
         return label
     }()
     
-    var tail: UIButton = UIButton()
+    public var tail: UIButton = UIButton()
     
-    var accessory: UIImageView = UIImageView(image: BaseUIKitResource.accessory)
+    public var accessory: UIImageView = UIImageView(image: BaseUIKitResource.accessory)
     
-    public func setup(with viewModel: TableCellViewModel) {
+    open func setup(with viewModel: TableCellViewModel) {
         
         guard let _viewModel = viewModel as? DefaultTableCellViewModel else {return}
         
@@ -80,7 +80,7 @@ public class DefaultTableCell: UITableViewCell, TableCell {
         (self.viewModel as? DefaultTableCellViewModel)?.tailClicked?()
     }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    open override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.tail.addTarget(self, action: #selector(clickDetail(_:)), for: UIControl.Event.touchUpInside)
@@ -95,7 +95,7 @@ public class DefaultTableCell: UITableViewCell, TableCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func setSelected(_ selected: Bool, animated: Bool) {
+    open override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 }
