@@ -1,5 +1,5 @@
 //
-//  PerformanceTableCell.swift
+//  DefaultTableCell.swift
 //  ThinkerBaseKit
 //
 //  Created by P36348 on 2018/5/2.
@@ -17,7 +17,7 @@ import RxCocoa
   -------------------------------------------------------------------------------------
  */
 /// frame layout cell
-public class PerformanceTableCell: UITableViewCell, TableCell {
+public class DefaultTableCell: UITableViewCell, TableCell {
     
     public var viewModel: TableCellViewModel?
     
@@ -38,7 +38,7 @@ public class PerformanceTableCell: UITableViewCell, TableCell {
     
     public func setup(with viewModel: TableCellViewModel) {
         
-        guard let _viewModel = viewModel as? CommonTableCellViewModel else {return}
+        guard let _viewModel = viewModel as? DefaultTableCellViewModel else {return}
         
         self.viewModel = _viewModel
         
@@ -59,7 +59,7 @@ public class PerformanceTableCell: UITableViewCell, TableCell {
             self.tail.isHidden = true
         }
         
-        self.tail.isUserInteractionEnabled = (self.viewModel as? CommonTableCellViewModel)?.tailClicked != nil
+        self.tail.isUserInteractionEnabled = (self.viewModel as? DefaultTableCellViewModel)?.tailClicked != nil
         
         self.accessory.isHidden = !_viewModel.accessorable
         
@@ -77,7 +77,7 @@ public class PerformanceTableCell: UITableViewCell, TableCell {
     }
     
     @objc dynamic private func clickDetail(_ sender: UIButton) {
-        (self.viewModel as? CommonTableCellViewModel)?.tailClicked?()
+        (self.viewModel as? DefaultTableCellViewModel)?.tailClicked?()
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -119,9 +119,9 @@ private var accessorySize: CGSize {
     return BaseUIKitResource.accessory?.size ?? CGSize.zero
 }
 
-public struct CommonTableCellViewModel: TableCellViewModel {
+public struct DefaultTableCellViewModel: TableCellViewModel {
     
-    public var cellClass: AnyClass = PerformanceTableCell.self
+    public var cellClass: AnyClass = DefaultTableCell.self
     
     public var height: CGFloat
     
