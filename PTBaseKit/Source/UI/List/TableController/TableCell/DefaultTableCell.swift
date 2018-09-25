@@ -80,7 +80,7 @@ open class DefaultTableCell: UITableViewCell, TableCell {
         (self.viewModel as? DefaultTableCellViewModel)?.tailClicked?()
     }
     
-    open override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.tail.addTarget(self, action: #selector(clickDetail(_:)), for: UIControl.Event.touchUpInside)
