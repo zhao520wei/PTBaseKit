@@ -27,8 +27,8 @@ public class TextFieldController: BaseController {
         return tf
     }()
     
-    let doneButton: UIButton = ViewFactory.createBarButton(title: BaseUIKitResource.textFieldDoneTitle.attributedString(color: UIColor.tk.main),
-                                                           disabledTitle: BaseUIKitResource.textFieldDoneTitle.attributedString(color: UIColor.tk.lightGray))
+    let doneButton: UIButton = ViewFactory.createBarButton(title: PTBaseKitResource.textFieldDoneTitle.attributedString(color: UIColor.tk.main),
+                                                           disabledTitle: PTBaseKitResource.textFieldDoneTitle.attributedString(color: UIColor.tk.lightGray))
     
     var doneAction: ((TextFieldController, String?)->Void)? = nil
     

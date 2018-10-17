@@ -35,7 +35,7 @@
 		959BBF242111F4B400106646 /* GoogleMaps+MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEC82111F4B400106646 /* GoogleMaps+MapManager.swift */; };
 		959BBF252111F4B400106646 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEC92111F4B400106646 /* Map.swift */; };
 		959BBF262111F4B400106646 /* GlobalValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBECD2111F4B400106646 /* GlobalValues.swift */; };
-		959BBF272111F4B400106646 /* BaseUIKitResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBECE2111F4B400106646 /* BaseUIKitResource.swift */; };
+		959BBF272111F4B400106646 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBECE2111F4B400106646 /* Resources.swift */; };
 		959BBF282111F4B400106646 /* LoadingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBED02111F4B400106646 /* LoadingController.swift */; };
 		959BBF292111F4B400106646 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBED22111F4B400106646 /* WebController.swift */; };
 		959BBF2C2111F4B400106646 /* ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBED72111F4B400106646 /* ImageSource.swift */; };
@@ -73,6 +73,7 @@
 		959BBF5E2111F4F300106646 /* UIKitTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBF5D2111F4F300106646 /* UIKitTableController.swift */; };
 		95A4526B212EB3AA00325960 /* WebURLController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4526A212EB3AA00325960 /* WebURLController.swift */; };
 		95BA686B2121F3A300FDB7FD /* MJRefresh+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */; };
+		95FB4E07215A36C200518489 /* DynamicNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB4E06215A36C200518489 /* DynamicNavigationBar.swift */; };
 		98929904E29583B5DA516CC9 /* Pods_PTBaseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B02495693B8E88A88D1991 /* Pods_PTBaseKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,7 +123,7 @@
 		959BBEC82111F4B400106646 /* GoogleMaps+MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleMaps+MapManager.swift"; sourceTree = "<group>"; };
 		959BBEC92111F4B400106646 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		959BBECD2111F4B400106646 /* GlobalValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalValues.swift; sourceTree = "<group>"; };
-		959BBECE2111F4B400106646 /* BaseUIKitResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUIKitResource.swift; sourceTree = "<group>"; };
+		959BBECE2111F4B400106646 /* Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		959BBED02111F4B400106646 /* LoadingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingController.swift; sourceTree = "<group>"; };
 		959BBED22111F4B400106646 /* WebController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		959BBED72111F4B400106646 /* ImageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSource.swift; sourceTree = "<group>"; };
@@ -160,6 +161,7 @@
 		959BBF5D2111F4F300106646 /* UIKitTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTableController.swift; sourceTree = "<group>"; };
 		95A4526A212EB3AA00325960 /* WebURLController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebURLController.swift; sourceTree = "<group>"; };
 		95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MJRefresh+Extension.swift"; sourceTree = "<group>"; };
+		95FB4E06215A36C200518489 /* DynamicNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicNavigationBar.swift; sourceTree = "<group>"; };
 		C22F7CD723FF55B896D2E9C0 /* Pods-PTBaseKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTBaseKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PTBaseKitTests/Pods-PTBaseKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2B02495693B8E88A88D1991 /* Pods_PTBaseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PTBaseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -316,6 +318,7 @@
 		959BBECB2111F4B400106646 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				95C7A10C215A0AE600775C7C /* CycleScroll */,
 				959BBECC2111F4B400106646 /* GlobalValues */,
 				959BBECF2111F4B400106646 /* Loading */,
 				959BBED12111F4B400106646 /* Web */,
@@ -334,7 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				959BBECD2111F4B400106646 /* GlobalValues.swift */,
-				959BBECE2111F4B400106646 /* BaseUIKitResource.swift */,
+				959BBECE2111F4B400106646 /* Resources.swift */,
 			);
 			path = GlobalValues;
 			sourceTree = "<group>";
@@ -396,13 +399,6 @@
 				959BBEEB2111F4B400106646 /* TableSection */,
 			);
 			path = TableController;
-			sourceTree = "<group>";
-		};
-		959BBEE32111F4B400106646 /* TableCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TableCell;
 			sourceTree = "<group>";
 		};
 		959BBEE92111F4B400106646 /* Controller */ = {
@@ -551,10 +547,17 @@
 			path = TableCell;
 			sourceTree = "<group>";
 		};
+		95C7A10C215A0AE600775C7C /* CycleScroll */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CycleScroll;
+			sourceTree = "<group>";
+		};
 		95FAFBC4211339CF00FEA6F5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				959BBEE32111F4B400106646 /* TableCell */,
+				95FB4E06215A36C200518489 /* DynamicNavigationBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -847,11 +850,12 @@
 				959BBF262111F4B400106646 /* GlobalValues.swift in Sources */,
 				959BBF312111F4B400106646 /* UIImage+Extensions.swift in Sources */,
 				959BBF232111F4B400106646 /* AMap+MapAdapter.swift in Sources */,
-				959BBF272111F4B400106646 /* BaseUIKitResource.swift in Sources */,
+				959BBF272111F4B400106646 /* Resources.swift in Sources */,
 				959300342154D4070084AF9C /* UIFont.swift in Sources */,
 				959BBF4A2111F4B500106646 /* DispatchQueue+RxSwift.swift in Sources */,
 				959BBF392111F4B500106646 /* DefaultTableCell.swift in Sources */,
 				959BBF3A2111F4B500106646 /* CommonTableController.swift in Sources */,
+				95FB4E07215A36C200518489 /* DynamicNavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

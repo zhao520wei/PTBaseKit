@@ -12,8 +12,11 @@ import RxSwift
 
 class IndexController: BaseController {
     
-    let segmented: UISegmentedControl = {
+    lazy var segmented: UISegmentedControl = {
         let item = UISegmentedControl(items: ["UIKitTable", "ASDKTable", "GoogleMaps", "Utils", "Web"])
+        item.tintColor = UIColor.clear
+        item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.tk.main], for: UIControl.State.normal)
+        item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.tk.main, NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue], for: UIControl.State.selected)
         item.selectedSegmentIndex = 0
         return item
     }()
@@ -41,7 +44,6 @@ class IndexController: BaseController {
 
     override func performPreSetup() {
         self.navigationItem.titleView = self.segmented
-        self.segmented.tintColor = UIColor.tk.main
     }
     
     override func performSetup() {

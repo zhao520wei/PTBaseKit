@@ -27,7 +27,7 @@ public protocol MapAdapter {
     
     var userLocation: CLLocationCoordinate2D? {get}
     
-    var didTapAnnotation: ((adapter: MapAdapter, annotationAtIndex: Int, identifier: String)) -> Bool {get set}
+    var didTapAnnotation: ((adapter: MapAdapter, identifier: String)) -> Bool {get set}
     
     var didTapAtLocation: PublishSubject<(adapter: MapAdapter, location: CLLocationCoordinate2D)> {get}
     
@@ -45,13 +45,13 @@ public protocol MapAdapter {
     
     // MARK: annotation
     
-    func addAnnotation(location: CLLocationCoordinate2D, view: UIView, tapEnable: Bool, identifier: String)
+    func addAnnotations(_ annotations: [(location: CLLocationCoordinate2D, view: MapAnnotationViewSource, tapEnable: Bool, identifier: String)])
     
-    func updateAnnotation(with option: (view: UIView, tapEnable: Bool), at index: Int, identifier: String)
+    func addAnnotation(location: CLLocationCoordinate2D, view: MapAnnotationViewSource, tapEnable: Bool, identifier: String)
     
-    func removeAnnotation(at index: Int, identifier: String)
+    func updateAnnotation(with option: (view: MapAnnotationViewSource, tapEnable: Bool), identifier: String)
     
-    func removeAllAnnotations(identifier: String)
+    func removeAnnotation(for identifier: String)
     
     func removeAllAnnotations()
     
@@ -67,7 +67,7 @@ public protocol MapAdapter {
     
     func fetchPathInfo(from: CLLocationCoordinate2D, to: CLLocationCoordinate2D) -> Observable<(adapter: MapAdapter, duration: Double, distance: UInt, polyLineSource: MapPolyLineSource)>
     
-    func addPath(with polyLineSource: MapPolyLineSource, fromView: UIView, toView: UIView)
+    func addPath(with polyLineSource: MapPolyLineSource, fromView: MapAnnotationViewSource, toView: MapAnnotationViewSource)
     
     func addPath(fromOption: AnnotationOption, toOption: AnnotationOption)
     
@@ -83,7 +83,7 @@ public protocol MapAdapter {
     
     // MARK: location
     
-    func locationOfAnnotaion(at index: Int, identifier: String) -> CLLocationCoordinate2D?
+    func locationOfAnnotaion(for identifier: String) -> CLLocationCoordinate2D?
     
 }
 
@@ -91,12 +91,16 @@ public protocol Map {
     var viewValue: UIView {get}
 }
 
+public protocol MapAnnotationViewSource {
+    
+}
+
 public protocol MapAnnotation {
     var location: CLLocationCoordinate2D {get}
     
     var title: String? {get}
     
-    var view: UIView? {get}
+    var view: MapAnnotationViewSource? {get}
 }
 
 

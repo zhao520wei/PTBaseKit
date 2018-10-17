@@ -16,13 +16,17 @@ extension GMSMapView: Map {
     public var viewValue: UIView {return self}
 }
 
+extension UIView: MapAnnotationViewSource {
+    
+}
+
 extension GMSMarker: MapAnnotation {
-    public var location: CLLocationCoordinate2D {
-        return self.position
+    public var view: MapAnnotationViewSource? {
+        return self.iconView
     }
     
-    public var view: UIView? {
-        return self.iconView
+    public var location: CLLocationCoordinate2D {
+        return self.position
     }
 }
 
@@ -47,7 +51,7 @@ public class GoogleMapsAdapter: NSObject, MapAdapter {
         return self.googleMap.myLocation?.coordinate
     }
     
-    public var didTapAnnotation: ((adapter: MapAdapter, annotationAtIndex: Int, identifier: String)) -> Bool = {_ in true}
+    public var didTapAnnotation: ((adapter: MapAdapter, identifier: String)) -> Bool = {_ in true}
     
     public var didTapAtLocation: PublishSubject<(adapter: MapAdapter, location: CLLocationCoordinate2D)> = PublishSubject<(adapter: MapAdapter, location: CLLocationCoordinate2D)>()
     
@@ -63,7 +67,7 @@ public class GoogleMapsAdapter: NSObject, MapAdapter {
     
     fileprivate var selectedMarker: GMSMarker? = nil
     
-    fileprivate var markers: [String: [GMSMarker]] = [:]
+    fileprivate var markers: [String: GMSMarker] = [:]
     
     fileprivate var polylines: [GMSPolyline] = []
     
@@ -128,40 +132,34 @@ extension GoogleMapsAdapter {
         self.googleMap.clear()
     }
     
-    public func addAnnotation(location: CLLocationCoordinate2D, view: UIView, tapEnable: Bool, identifier: String) {
-        let marker = GMSMarker(position: location)
-        marker.iconView = view
-        marker.isTappable = tapEnable
-        marker.map = self.googleMap
-        var _markers = self.markers[identifier] ?? []
-        _markers.append(marker)
-        self.markers[identifier] = _markers
+    public func addAnnotations(_ annotations: [(location: CLLocationCoordinate2D, view: MapAnnotationViewSource, tapEnable: Bool, identifier: String)]) {
+        
     }
     
-    public func updateAnnotation(with option: (view: UIView, tapEnable: Bool), at index: Int, identifier: String) {
-        let marker = self.markers[identifier]?[index]
-        marker?.iconView = option.view
+    public func addAnnotation(location: CLLocationCoordinate2D, view: MapAnnotationViewSource, tapEnable: Bool, identifier: String) {
+        let marker = GMSMarker(position: location)
+        marker.iconView = view as? UIView
+        marker.isTappable = tapEnable
+        marker.map = self.googleMap
+        self.markers[identifier]?.map = nil
+        self.markers[identifier] = marker
+    }
+    
+    public func updateAnnotation(with option: (view: MapAnnotationViewSource, tapEnable: Bool), identifier: String) {
+        let marker = self.markers[identifier]
+        marker?.iconView = option.view as? UIView
         marker?.isTappable = option.tapEnable
     }
     
-    public func removeAnnotation(at index: Int, identifier: String) {
-        guard
-            var _markers = self.markers[identifier],
-            _markers.count >= index-1
-            else {return}
-        
-        let marker = _markers[index]
-        marker.map = nil
-        _markers.remove(at: index)
-    }
-    
-    public func removeAllAnnotations(identifier: String) {
-        self.markers[identifier]?.forEach {$0.map = nil}
-        self.markers[identifier] = nil
+    public func removeAnnotation(for identifier: String) {
+        if let _marker = self.markers[identifier] {
+            _marker.map = nil
+            self.markers.removeValue(forKey: identifier)
+        }
     }
     
     public func removeAllAnnotations() {
-        self.markers.forEach {param in param.value.forEach {$0.map = nil}}
+        self.markers.values.forEach({$0.map = nil})
         self.markers.removeAll()
     }
     
@@ -219,7 +217,7 @@ extension GoogleMapsAdapter {
     
     
     
-    public func addPath(with polyLineSource: MapPolyLineSource, fromView: UIView, toView: UIView) {
+    public func addPath(with polyLineSource: MapPolyLineSource, fromView: MapAnnotationViewSource, toView: MapAnnotationViewSource) {
         
         guard let source = polyLineSource as? GoogleMapPolyLineSource else {return}
         if let _oldStartMarker = self.startMarker {
@@ -237,7 +235,7 @@ extension GoogleMapsAdapter {
         self.startMarker = GMSMarker(position: source.from)
         self.startMarker?.map = self.googleMap
         self.startMarker?.isTappable = false
-        self.startMarker?.iconView = fromView
+        self.startMarker?.iconView = fromView as? UIView
         
         let allMarkers = self.markers.values.reduce([]) { (result, _markers) -> [GMSMarker] in
             return [] + _markers
@@ -249,7 +247,7 @@ extension GoogleMapsAdapter {
         self.destinationMarker = GMSMarker(position: source.to)
         self.destinationMarker?.map = self.googleMap
         self.destinationMarker?.isTappable = false
-        self.destinationMarker?.iconView = toView
+        self.destinationMarker?.iconView = toView as? UIView
         
         self.addPolyLine(with: source.path)
     }
@@ -316,8 +314,8 @@ extension GoogleMapsAdapter {
         self.overlays.removeAll()
     }
     
-    public func locationOfAnnotaion(at index: Int, identifier: String) -> CLLocationCoordinate2D? {
-        return self.markers[identifier]?[index].position
+    public func locationOfAnnotaion(for identifier: String) -> CLLocationCoordinate2D? {
+        return self.markers[identifier]?.position
     }
 }
 
@@ -340,20 +338,10 @@ extension GoogleMapsAdapter: GMSMapViewDelegate {
     }
     
     public func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        var result = false
-        var index = 0
-        var id = ""
-        self.markers.forEach {param in
-            if let _index = param.value.index(of: marker) {
-                result = true
-                index = _index
-                id = param.key
-            }
+        guard let result = self.markers.first(where: {$0.value == marker}) else {
+            return false
         }
-        if result {
-            return self.didTapAnnotation((self, index, id))
-        }
-        return false
+        return self.didTapAnnotation((self, result.key))
     }
 }
 

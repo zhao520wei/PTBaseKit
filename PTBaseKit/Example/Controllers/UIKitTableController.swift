@@ -13,6 +13,8 @@ import RxSwift
 /// CommonTableController的演示页面
 class UIKitTableController: BaseController {
     
+    var tableView: UITableView!
+    
     override func performSetup() {
         testTableController(on: self)
     }
@@ -23,7 +25,7 @@ class UIKitTableController: BaseController {
     }
 }
 
-private func testTableController(on controller: UIViewController) {
+private func testTableController(on controller: UIKitTableController) {
     let table = CommonTableController()
         .setupTableView(with: .sepratorStyle(.singleLine))
         .performWhenReload { (_table) in
@@ -42,6 +44,8 @@ private func testTableController(on controller: UIViewController) {
                 .subscribe(onNext: { _table.loadMore(withSectionViewModels: $0, isLast: true) })
                 .disposed(by: _table)
     }
+    
+    controller.tableView = table.tableView
     
     controller.view += table.view
     

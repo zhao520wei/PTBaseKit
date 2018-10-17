@@ -1,5 +1,5 @@
 //
-//  BaseUIKitResource.swift
+//  Resources.swift
 //  ThinkerBaseKit
 //
 //  Created by P36348 on 21/12/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct BaseUIKitResource {
+public struct PTBaseKitResource {
     
     public static var backIndicatorImage: UIImage? = nil
     

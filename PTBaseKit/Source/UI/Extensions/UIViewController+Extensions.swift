@@ -56,7 +56,7 @@ extension UIViewController {
 // MARK: - alert
 extension UIViewController{
     
-    public func presentAlert(title: String ,message: String, force: Bool = false, warning: Bool = false, confirmTitle: String = BaseUIKitResource.alertConfirmTitle, confirmAction: (()->())? = nil) -> UIAlertController {
+    public func presentAlert(title: String ,message: String, force: Bool = false, warning: Bool = false, confirmTitle: String = PTBaseKitResource.alertConfirmTitle, confirmAction: (()->())? = nil) -> UIAlertController {
         var controller = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
         if (UIDevice.current.userInterfaceIdiom != .phone){
             controller = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
@@ -71,7 +71,7 @@ extension UIViewController{
             confirmAction?()
         }
         if !force {
-            controller.addAction(UIAlertAction(title: BaseUIKitResource.alertCancelTitle, style: UIAlertAction.Style.cancel, handler: nil))
+            controller.addAction(UIAlertAction(title: PTBaseKitResource.alertCancelTitle, style: UIAlertAction.Style.cancel, handler: nil))
         }
         
         !warning ? confirmAction.setValue(UIColor.tk.main, forKey: "_titleTextColor") : nil

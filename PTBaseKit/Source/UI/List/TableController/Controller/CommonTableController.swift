@@ -116,7 +116,7 @@ public class CommonTableController: BaseController, TableController {
         self.view += [self.emptyTipsImage, self.emptyTipsLabel]
         
         if self.emptyTipsImage.image == nil, self.emptyTipsLabel.attributedText == nil {
-            _ = self.setupEmptyPlaceHolder(image: BaseUIKitResource.emptyImage, title: BaseUIKitResource.emptyTips.attributedString(font: 14.customRegularFont))
+            _ = self.setupEmptyPlaceHolder(image: PTBaseKitResource.emptyImage, title: PTBaseKitResource.emptyTips.attributedString(font: 14.customRegularFont))
         }
         
         self.tableView.snp.makeConstraints { (make) in
@@ -171,19 +171,31 @@ extension CommonTableController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard
-            let identifier = self.sectionViewModels[section].header?.viewClass.description(),
-            let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier)
+            let identifier = self.sectionViewModels[section].header?.viewClass.description()
             else
         {return nil}
+        guard
+            let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier)
+            else
+        {
+            tableView.register(self.sectionViewModels[section].header?.viewClass, forHeaderFooterViewReuseIdentifier: identifier)
+            return tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier)
+        }
         return view
     }
     
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard
-            let identifier = self.sectionViewModels[section].footer?.viewClass.description(),
-            let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier)
+            let identifier = self.sectionViewModels[section].footer?.viewClass.description()
             else
         {return nil}
+        guard
+            let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier)
+            else
+        {
+            tableView.register(self.sectionViewModels[section].footer?.viewClass, forHeaderFooterViewReuseIdentifier: identifier)
+            return tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier)
+        }
         return view
     }
     
