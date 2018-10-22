@@ -28,6 +28,8 @@ public class CommonTableController: BaseController, TableController {
     
     fileprivate var loadMoreAction: ((CommonTableController)->Void)? = nil
     
+    fileprivate var tableDidScrollAction: ((CommonTableController)->Void)? = nil
+    
     fileprivate var loadAutomaticlly: Bool = true
     
     fileprivate var backgroundColor: UIColor = UIColor.tk.background
@@ -146,10 +148,6 @@ public class CommonTableController: BaseController, TableController {
                     weakSelf.reloadAction?(weakSelf)
                 })
                 .disposed(by: self)
-//            self.tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: { [weak self] in
-//                guard let weakSelf = self else {return}
-//                weakSelf.reloadAction?(weakSelf)
-//            })
         }
     }
 }
@@ -164,6 +162,10 @@ extension CommonTableController {
 }
 
 extension CommonTableController: UITableViewDelegate {
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.tableDidScrollAction?(self)
+    }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.sectionViewModels[indexPath.section].cellViewModels[indexPath.row].height
@@ -295,6 +297,11 @@ extension CommonTableController {
     
     public func performWhenSelectItem(action: @escaping (CommonTableController, IndexPath) -> Void) -> CommonTableController {
         self.selectItemAction = action
+        return self
+    }
+    
+    public func performWhenTableScrollDidScroll(action: @escaping (CommonTableController) -> Void) -> CommonTableController {
+        self.tableDidScrollAction = action
         return self
     }
     

@@ -181,7 +181,7 @@ extension GoogleMapsAdapter {
         self.startMarker?.isTappable = false
         self.startMarker?.iconView = fromOption.view
         
-        self.selectedMarker = self.markers[toOption.identifier]?.filter {$0.position.latitude == toOption.location.latitude && $0.position.longitude == toOption.location.longitude}.first
+        self.selectedMarker = self.markers.values.filter {$0.position.latitude == toOption.location.latitude && $0.position.longitude == toOption.location.longitude}.first
         self.selectedMarker?.map = nil
         
         self.destinationMarker = GMSMarker(position: toOption.location)
@@ -237,9 +237,7 @@ extension GoogleMapsAdapter {
         self.startMarker?.isTappable = false
         self.startMarker?.iconView = fromView as? UIView
         
-        let allMarkers = self.markers.values.reduce([]) { (result, _markers) -> [GMSMarker] in
-            return [] + _markers
-        }
+        let allMarkers = self.markers.values
         
         self.selectedMarker = allMarkers.filter {$0.position.latitude == source.to.latitude && $0.position.longitude == source.to.longitude}.first
         self.selectedMarker?.map = nil

@@ -36,8 +36,6 @@ open class BaseController: UIViewController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.preSetup()
         self.performPreSetup()
         
         self.perform(NSSelectorFromString("performSetup"),
@@ -46,7 +44,10 @@ open class BaseController: UIViewController {
                      inModes: [RunLoop.Mode.default])
     }
     
-    private func preSetup() {
+    /**
+     * 非耗时界面初始化操作
+     */
+    open func performPreSetup() {
         self.view.backgroundColor = UIColor.tk.background
         
         self.automaticallyAdjustsScrollViewInsets = true
@@ -66,12 +67,6 @@ open class BaseController: UIViewController {
             
             self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         }
-    }
-    /**
-     * 非耗时界面初始化操作
-     */
-    open func performPreSetup() {
-        
     }
     
     /**
