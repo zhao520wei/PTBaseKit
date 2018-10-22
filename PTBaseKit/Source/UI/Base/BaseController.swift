@@ -36,7 +36,7 @@ open class BaseController: UIViewController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.performPreSetup()
         
         self.perform(NSSelectorFromString("performSetup"),
@@ -52,21 +52,21 @@ open class BaseController: UIViewController {
         self.view.backgroundColor = UIColor.tk.background
         self.automaticallyAdjustsScrollViewInsets = true
         
-        if
-            self.navigationController != nil
-        {
-            self.navigationController?.navigationBar.barTintColor = UIColor.tk.white
-            self.navigationController?.navigationBar.tintColor = UIColor.tk.black
-            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.tk.black,
-                                                                            NSAttributedString.Key.font: 18.5.customRegularFont]
-            self.navigationController?.navigationBar.isTranslucent = false
-            self.navigationController?.navigationBar.shadowImage = UIImage()
-            
-            self.navigationController?.navigationBar.backIndicatorImage = PTBaseKitResource.backIndicatorImage
-            self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = PTBaseKitResource.backIndicatorTransitionMaskImage
-            
-            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        }
+        //        if
+        //            self.navigationController != nil
+        //        {
+        //            self.navigationController?.navigationBar.barTintColor = UIColor.tk.white
+        //            self.navigationController?.navigationBar.tintColor = UIColor.tk.black
+        //            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.tk.black,
+        //                                                                            NSAttributedString.Key.font: 18.5.customRegularFont]
+        //            self.navigationController?.navigationBar.isTranslucent = false
+        //            self.navigationController?.navigationBar.shadowImage = UIImage()
+        //
+        //            self.navigationController?.navigationBar.backIndicatorImage = PTBaseKitResource.backIndicatorImage
+        //            self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = PTBaseKitResource.backIndicatorTransitionMaskImage
+        //
+        //            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        //        }
     }
     
     /**

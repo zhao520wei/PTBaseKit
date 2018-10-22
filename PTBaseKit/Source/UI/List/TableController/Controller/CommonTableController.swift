@@ -12,6 +12,7 @@ import RxSwift
 import MJRefresh
 
 public enum TableViewOptions {
+    case automaticallyAdjustsScrollViewInsets(Bool)
     case allowMultiSelection(Bool)
     case sepratorStyle(UITableViewCell.SeparatorStyle)
 }
@@ -33,6 +34,8 @@ public class CommonTableController: BaseController, TableController {
     fileprivate var loadAutomaticlly: Bool = true
     
     fileprivate var backgroundColor: UIColor = UIColor.tk.background
+    
+    fileprivate var tableViewSetupAction: ((CommonTableController) -> Void)? = nil
     
     // view
     
@@ -82,11 +85,16 @@ public class CommonTableController: BaseController, TableController {
     
     public func setupUI() {
         
-        if #available(iOS 11, *) {
-            self.tableView.contentInsetAdjustmentBehavior = .never
+        if let action = self.tableViewSetupAction {
+            action(self)
         }else {
-            self.automaticallyAdjustsScrollViewInsets = false
+            //            if #available(iOS 11, *) {
+            //                self.tableView.contentInsetAdjustmentBehavior = .always
+            //            }else {
+            //                self.automaticallyAdjustsScrollViewInsets = true
+            //            }
         }
+        
         
         self.view.backgroundColor = self.backgroundColor
         
@@ -341,6 +349,28 @@ extension CommonTableController {
                 self.tableView.allowsMultipleSelection = allow
             case .sepratorStyle(let style):
                 self.separatorStyle = style
+            case .automaticallyAdjustsScrollViewInsets(let adjust):
+                if #available(iOS 11, *) {
+                    self.tableView.contentInsetAdjustmentBehavior = adjust ? .always : .never
+                }else {
+                    self.automaticallyAdjustsScrollViewInsets = adjust
+                }
+            }
+        }
+        self.tableViewSetupAction = { controller in
+            options.forEach { (option) in
+                switch option {
+                case .allowMultiSelection(let allow):
+                    controller.tableView.allowsMultipleSelection = allow
+                case .sepratorStyle(let style):
+                    controller.separatorStyle = style
+                case .automaticallyAdjustsScrollViewInsets(let adjust):
+                    if #available(iOS 11, *) {
+                        controller.tableView.contentInsetAdjustmentBehavior = adjust ? .always : .never
+                    }else {
+                        controller.automaticallyAdjustsScrollViewInsets = adjust
+                    }
+                }
             }
         }
         return self
