@@ -49,6 +49,7 @@ public class CommonTableController: BaseController, TableController {
     public var emptyTipsLabel: UILabel = UILabel()
     
     public override func performPreSetup() {
+        super.performPreSetup()
         self.setupUI()
         
         self.bindObservables()
@@ -79,7 +80,7 @@ public class CommonTableController: BaseController, TableController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func setupUI() {
+    public func setupUI() {
         
         if #available(iOS 11, *) {
             self.tableView.contentInsetAdjustmentBehavior = .never
@@ -140,7 +141,7 @@ public class CommonTableController: BaseController, TableController {
         }
     }
     
-    private func bindObservables() {
+    public func bindObservables() {
         if let _ = self.reloadAction {
             self.tableView.rx_pullToRefresh()
                 .subscribe(onNext: {[weak self] in

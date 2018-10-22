@@ -36,6 +36,7 @@ open class BaseController: UIViewController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
+
         self.performPreSetup()
         
         self.perform(NSSelectorFromString("performSetup"),
@@ -49,7 +50,6 @@ open class BaseController: UIViewController {
      */
     open func performPreSetup() {
         self.view.backgroundColor = UIColor.tk.background
-        
         self.automaticallyAdjustsScrollViewInsets = true
         
         if
