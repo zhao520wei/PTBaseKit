@@ -156,6 +156,7 @@ public struct DefaultTableCellViewModel: TableCellViewModel {
                  tail: ButtonContentOptions? = nil,
                  backgroundCss: UIViewCss? = nil,
                  accessorable: Bool = false,
+                 performWhenSelect: ((UITableView, IndexPath) -> Void)? = nil,
                  boundsOption: BoundsOptions = .constant(CGSize(width: kScreenWidth, height: 45))) {
         
         self.head = head
@@ -214,5 +215,6 @@ public struct DefaultTableCellViewModel: TableCellViewModel {
             self.tailFrame = CGRect.zero
         }
 
+        self.performWhenSelect = performWhenSelect
     }
 }
