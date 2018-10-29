@@ -51,7 +51,7 @@ public class GoogleMapsAdapter: NSObject, MapAdapter {
         return self.googleMap.myLocation?.coordinate
     }
     
-    public var didTapAnnotation: ((adapter: MapAdapter, identifier: String)) -> Bool = {_ in true}
+    public var didTapAnnotation: ((adapter: MapAdapter, identifier: String, location: CLLocationCoordinate2D)) -> Bool = {_ in true}
     
     public var didTapAtLocation: PublishSubject<(adapter: MapAdapter, location: CLLocationCoordinate2D)> = PublishSubject<(adapter: MapAdapter, location: CLLocationCoordinate2D)>()
     
@@ -339,7 +339,7 @@ extension GoogleMapsAdapter: GMSMapViewDelegate {
         guard let result = self.markers.first(where: {$0.value == marker}) else {
             return false
         }
-        return self.didTapAnnotation((self, result.key))
+        return self.didTapAnnotation((self, result.key, marker.location))
     }
 }
 

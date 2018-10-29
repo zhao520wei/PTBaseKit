@@ -27,6 +27,10 @@ open class BaseController: UIViewController {
     
     public fileprivate(set) var defaultDisposeBag: DisposeBag! = DisposeBag()
     
+    
+    /// 用于配置viewDidLoad行为, 在不继承的场景下可以使用, 相当于继承之后重载performSetup
+    public var performOnViewDidLoad: (BaseController)->Void = { _ in }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
         self.disposeBags.removeAll()
@@ -73,7 +77,7 @@ open class BaseController: UIViewController {
      * 耗时界面初始化操作
      */
     @objc open func performSetup() {
-        
+        self.performOnViewDidLoad(self)
     }
     
     override open func didReceiveMemoryWarning() {

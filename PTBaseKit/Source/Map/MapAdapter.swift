@@ -27,7 +27,7 @@ public protocol MapAdapter {
     
     var userLocation: CLLocationCoordinate2D? {get}
     
-    var didTapAnnotation: ((adapter: MapAdapter, identifier: String)) -> Bool {get set}
+    var didTapAnnotation: ((adapter: MapAdapter, identifier: String, location: CLLocationCoordinate2D)) -> Bool {get set}
     
     var didTapAtLocation: PublishSubject<(adapter: MapAdapter, location: CLLocationCoordinate2D)> {get}
     
