@@ -72,6 +72,7 @@
 		959BBF5C2111F4B500106646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBF1E2111F4B400106646 /* AppDelegate.swift */; };
 		959BBF5E2111F4F300106646 /* UIKitTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBF5D2111F4F300106646 /* UIKitTableController.swift */; };
 		95A4526B212EB3AA00325960 /* WebURLController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4526A212EB3AA00325960 /* WebURLController.swift */; };
+		95B373C82186D49900608E53 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B373C72186D49900608E53 /* Date+Utils.swift */; };
 		95BA686B2121F3A300FDB7FD /* MJRefresh+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */; };
 		95FB4E07215A36C200518489 /* DynamicNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB4E06215A36C200518489 /* DynamicNavigationBar.swift */; };
 		98929904E29583B5DA516CC9 /* Pods_PTBaseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B02495693B8E88A88D1991 /* Pods_PTBaseKit.framework */; };
@@ -160,6 +161,7 @@
 		959BBF1E2111F4B400106646 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		959BBF5D2111F4F300106646 /* UIKitTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTableController.swift; sourceTree = "<group>"; };
 		95A4526A212EB3AA00325960 /* WebURLController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebURLController.swift; sourceTree = "<group>"; };
+		95B373C72186D49900608E53 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MJRefresh+Extension.swift"; sourceTree = "<group>"; };
 		95FB4E06215A36C200518489 /* DynamicNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicNavigationBar.swift; sourceTree = "<group>"; };
 		C22F7CD723FF55B896D2E9C0 /* Pods-PTBaseKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTBaseKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PTBaseKitTests/Pods-PTBaseKitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 				959BBF062111F4B400106646 /* DispatchQueue+RxSwift.swift */,
 				959BBF072111F4B400106646 /* UserDefaultsUtils.swift */,
 				959BBF082111F4B400106646 /* Optional+RxSwift.swift */,
+				95B373C72186D49900608E53 /* Date+Utils.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				959BBF3D2111F4B500106646 /* TableController.swift in Sources */,
 				959BBF402111F4B500106646 /* DefaultTableSectionNodeModel.swift in Sources */,
 				959BBF412111F4B500106646 /* DefaultTableController.swift in Sources */,
+				95B373C82186D49900608E53 /* Date+Utils.swift in Sources */,
 				959BBF5C2111F4B500106646 /* AppDelegate.swift in Sources */,
 				959BBF252111F4B400106646 /* Map.swift in Sources */,
 				95BA686B2121F3A300FDB7FD /* MJRefresh+Extension.swift in Sources */,
