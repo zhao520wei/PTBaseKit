@@ -109,7 +109,10 @@ public class CommonTableController: BaseController, TableController {
         if let _header = self.header {
             self.view.addSubview(_header)
             _header.snp.makeConstraints({ (make) in
-                make.top.leading.trailing.equalToSuperview()
+                var topOffset = self.navigationController?.navigationBar.bounds.height ?? 0
+                topOffset += (UIApplication.shared.statusBarFrame.height)
+                make.leading.trailing.equalToSuperview()
+                make.top.equalToSuperview().offset(topOffset)
                 make.height.equalTo(_header.frame.height)
             })
         }
@@ -408,7 +411,7 @@ extension CommonTableController {
         default: // one row, insert
             let section = CommonTableSectionViewModel(header: self.sectionViewModels.last!.header,
                                                       footer: self.sectionViewModels.last!.footer,
-                                                      cellViewModels: viewModels + self.sectionViewModels.last!.cellViewModels)
+                                                      cellViewModels: self.sectionViewModels.last!.cellViewModels + viewModels)
             self.sectionViewModels[self.sectionViewModels.count-1] = section
             if self.tableView.mj_footer.state == .refreshing {
                 (viewModels.count == 0 || isLast) ? self.tableView.mj_footer.endRefreshingWithNoMoreData() : self.tableView.mj_footer.endRefreshing()
