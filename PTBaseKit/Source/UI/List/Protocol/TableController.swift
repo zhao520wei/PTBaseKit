@@ -46,6 +46,8 @@ public protocol TableCellViewModel {
     
     var cellClass: AnyClass {get}
     
+    var canEdit: Bool {get}
+    
     var height: CGFloat {get}
     
     var performWhenSelect: ((UITableView, IndexPath)->Void)? {get}
@@ -55,6 +57,7 @@ extension TableCellViewModel {
     public var performWhenSelect: ((UITableView, IndexPath)->Void)? {
         return nil
     }
+    public var canEdit: Bool { return false }
 }
 
 public protocol TableController: class {

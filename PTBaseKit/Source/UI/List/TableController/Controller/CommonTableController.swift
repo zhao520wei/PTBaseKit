@@ -31,6 +31,8 @@ public class CommonTableController: BaseController, TableController {
     
     fileprivate var tableDidScrollAction: ((CommonTableController)->Void)? = nil
     
+    fileprivate var tableDidCommitEditing: ((CommonTableController, UITableViewCell.EditingStyle, IndexPath) -> Void)? = nil
+    
     fileprivate var loadAutomaticlly: Bool = true
     
     fileprivate var backgroundColor: UIColor = UIColor.tk.background
@@ -379,20 +381,22 @@ extension CommonTableController {
         return self
     }
     
-    public func handleReload(viewModels: [TableCellViewModel] , isLast: Bool = false) {
-        self.reload(withCellViewModels: viewModels, isLast: isLast)
-    }
-    
-    public func handleLoadMore(viewModels: [TableCellViewModel], isLast: Bool = false) {
-        self.loadMore(withCellViewModels: viewModels, isLast: isLast)
-    }
-    
     public func setupData(cellViewModels: [TableCellViewModel]) {
         self.setupData(sectionViewModels: [CommonTableSectionViewModel(header: nil, footer: nil, cellViewModels: cellViewModels)])
     }
     
     public func setupData(sectionViewModels: [TableSectionViewModel]) {
         self.sectionViewModels = sectionViewModels
+    }
+}
+
+extension CommonTableController {
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        self.tableDidCommitEditing?(self, editingStyle, indexPath)
+    }
+    
+    public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return self.sectionViewModels[indexPath.section].cellViewModels[indexPath.row].canEdit
     }
 }
 
