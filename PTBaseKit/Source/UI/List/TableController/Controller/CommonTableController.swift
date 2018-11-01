@@ -395,6 +395,10 @@ extension CommonTableController {
         self.tableDidCommitEditing?(self, editingStyle, indexPath)
     }
     
+    public func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        return self.sectionViewModels[indexPath.section].cellViewModels[indexPath.row].editActions
+    }
+    
     public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return self.sectionViewModels[indexPath.section].cellViewModels[indexPath.row].canEdit
     }
