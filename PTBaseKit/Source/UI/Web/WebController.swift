@@ -44,10 +44,10 @@ public class WebController: BaseController {
         return bar
     }()
     
-    lazy var cancelButtonItem: UIBarButtonItem = ViewFactory.createBarButtonItem(PTBaseKitResource.webCancelImage)
+    lazy var cancelButtonItem: UIBarButtonItem = ViewFactory.createBarButtonItem(PTBaseKit.Resource.webCancelImage)
     
     lazy var goBackButtonItem: UIBarButtonItem = {
-        let item = ViewFactory.createBarButtonItem(PTBaseKitResource.backIndicatorImage)
+        let item = ViewFactory.createBarButtonItem(PTBaseKit.Resource.backIndicatorImage)
         item.imageInsets = UIEdgeInsets(top: 0, left: -9, bottom: 0, right: 9)
         return item
     }()

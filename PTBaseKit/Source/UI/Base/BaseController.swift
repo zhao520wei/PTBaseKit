@@ -66,8 +66,8 @@ open class BaseController: UIViewController {
         //            self.navigationController?.navigationBar.isTranslucent = false
         //            self.navigationController?.navigationBar.shadowImage = UIImage()
         //
-        //            self.navigationController?.navigationBar.backIndicatorImage = PTBaseKitResource.backIndicatorImage
-        //            self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = PTBaseKitResource.backIndicatorTransitionMaskImage
+        //            self.navigationController?.navigationBar.backIndicatorImage = PTBaseKit.Resource.backIndicatorImage
+        //            self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = PTBaseKit.Resource.backIndicatorTransitionMaskImage
         //
         //            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         //        }

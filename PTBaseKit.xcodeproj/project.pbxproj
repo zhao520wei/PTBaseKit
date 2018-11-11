@@ -35,7 +35,6 @@
 		959BBF242111F4B400106646 /* GoogleMaps+MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEC82111F4B400106646 /* GoogleMaps+MapManager.swift */; };
 		959BBF252111F4B400106646 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBEC92111F4B400106646 /* Map.swift */; };
 		959BBF262111F4B400106646 /* GlobalValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBECD2111F4B400106646 /* GlobalValues.swift */; };
-		959BBF272111F4B400106646 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBECE2111F4B400106646 /* Resources.swift */; };
 		959BBF282111F4B400106646 /* LoadingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBED02111F4B400106646 /* LoadingController.swift */; };
 		959BBF292111F4B400106646 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBED22111F4B400106646 /* WebController.swift */; };
 		959BBF2C2111F4B400106646 /* ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBED72111F4B400106646 /* ImageSource.swift */; };
@@ -125,7 +124,6 @@
 		959BBEC82111F4B400106646 /* GoogleMaps+MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GoogleMaps+MapManager.swift"; sourceTree = "<group>"; };
 		959BBEC92111F4B400106646 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		959BBECD2111F4B400106646 /* GlobalValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalValues.swift; sourceTree = "<group>"; };
-		959BBECE2111F4B400106646 /* Resources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		959BBED02111F4B400106646 /* LoadingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingController.swift; sourceTree = "<group>"; };
 		959BBED22111F4B400106646 /* WebController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
 		959BBED72111F4B400106646 /* ImageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSource.swift; sourceTree = "<group>"; };
@@ -342,7 +340,6 @@
 			isa = PBXGroup;
 			children = (
 				959BBECD2111F4B400106646 /* GlobalValues.swift */,
-				959BBECE2111F4B400106646 /* Resources.swift */,
 			);
 			path = GlobalValues;
 			sourceTree = "<group>";
@@ -858,7 +855,6 @@
 				959BBF312111F4B400106646 /* UIImage+Extensions.swift in Sources */,
 				95D0F21F2198573000F74187 /* Global.swift in Sources */,
 				959BBF232111F4B400106646 /* AMap+MapAdapter.swift in Sources */,
-				959BBF272111F4B400106646 /* Resources.swift in Sources */,
 				959300342154D4070084AF9C /* UIFont.swift in Sources */,
 				959BBF4A2111F4B500106646 /* DispatchQueue+RxSwift.swift in Sources */,
 				959BBF392111F4B500106646 /* DefaultTableCell.swift in Sources */,

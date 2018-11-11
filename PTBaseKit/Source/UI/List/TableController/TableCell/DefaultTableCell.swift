@@ -34,7 +34,7 @@ open class DefaultTableCell: UITableViewCell, TableCell {
     
     public var tail: UIButton = UIButton()
     
-    public var accessory: UIImageView = UIImageView(image: PTBaseKitResource.accessory)
+    public var accessory: UIImageView = UIImageView(image: PTBaseKit.Resource.accessory)
     
     open func setup(with viewModel: TableCellViewModel) {
         
@@ -116,7 +116,7 @@ public enum BoundsOptions {
 }
 
 private var accessorySize: CGSize {
-    return PTBaseKitResource.accessory?.size ?? CGSize.zero
+    return PTBaseKit.Resource.accessory?.size ?? CGSize.zero
 }
 
 public struct DefaultTableCellViewModel: TableCellViewModel {

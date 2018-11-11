@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
               emptyHighlightedGradientStartHex: 0,
               emptyHighlightedGradientEndHex: 0)
         
-        PTBaseKitResource.accessory = #imageLiteral(resourceName: "accessory")
+        PTBaseKit.Resource.accessory = #imageLiteral(resourceName: "accessory")
         return true
     }
     
