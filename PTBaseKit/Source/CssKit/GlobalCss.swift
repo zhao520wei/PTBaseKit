@@ -21,8 +21,8 @@ func setup(mainColorHex: Int, normalGradientStartHex: Int, normalGradientEndHex:
     UIColor.tk.disableGradientEnd            = normalGradientEndHex.hexColor.withAlphaComponent(0.5)
     UIColor.tk.highlightedGradientStart      = highlightedGradientStartHex.hexColor
     UIColor.tk.highlightedGradientEnd        = highlightedGradientEndHex.hexColor
-    UIColor.tk.emptyHighlightedGradientStart = emptyHighlightedGradientStartHex.hexColor
-    UIColor.tk.emptyHighlightedGradientEnd   = emptyHighlightedGradientEndHex.hexColor
+    UIColor.tk.emptyHighlightedGradientStart = emptyHighlightedGradientStartHex.hexColor.withAlphaComponent(0.2)
+    UIColor.tk.emptyHighlightedGradientEnd   = emptyHighlightedGradientEndHex.hexColor.withAlphaComponent(0.2)
     // update additional css
     
     // uiview css
@@ -52,6 +52,7 @@ func setup(mainColorHex: Int, normalGradientStartHex: Int, normalGradientEndHex:
     
     buttonDisableImg     = CAGradientLayer([UIColor.tk.disableGradientStart, UIColor.tk.disableGradientEnd], windowsFrame).toImage
     
+    emptyButtonSelectedImg = CAGradientLayer([UIColor.tk.emptyHighlightedGradientStart, UIColor.tk.emptyHighlightedGradientEnd], windowsFrame).toImage
     
     buttonImgCss        = buttonNormalImg.bgCss + buttonhighlightedImg.bgHCss + buttonDisableImg.bgDisableCss
     
