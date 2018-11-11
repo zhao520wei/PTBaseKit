@@ -11,10 +11,10 @@ import RxSwift
 import RxCocoa
 
 /**
-  满足实现thinker项目中90%以上列表需要的效果, 避免定义多个TableViewCell子类.
-  -------------------------------------------------------------------------------------
-  |<-padding->图片(可选)<- ->标题+内容(可多行)<- ->按钮(可选,可多行)<- ->箭头(可选)<-padding->|
-  -------------------------------------------------------------------------------------
+ 满足实现thinker项目中90%以上列表需要的效果, 避免定义多个TableViewCell子类.
+ -------------------------------------------------------------------------------------
+ |<-padding->图片(可选)<- ->标题+内容(可多行)<- ->按钮(可选,可多行)<- ->箭头(可选)<-padding->|
+ -------------------------------------------------------------------------------------
  */
 /// frame layout cell
 open class DefaultTableCell: UITableViewCell, TableCell {
@@ -127,27 +127,27 @@ public struct DefaultTableCellViewModel: TableCellViewModel {
     
     private var width: CGFloat
     
-    var head: UIImage?
+    public var head: UIImage?
     
-    var headFrame: CGRect
+    public var headFrame: CGRect
     
-    var title: NSAttributedString
+    public var title: NSAttributedString
     
-    var titleFrame: CGRect
+    public var titleFrame: CGRect
     
-    var tail: ButtonContentOptions?
+    public var tail: ButtonContentOptions?
     
-    var tailFrame: CGRect
+    public var tailFrame: CGRect
     
-    var backgroundCss: UIViewCss?
+    public var backgroundCss: UIViewCss?
     
-    var accessorable: Bool
+    public var accessorable: Bool
     
-    var accessoryFrame: CGRect
+    public var accessoryFrame: CGRect
     
-    var selected: (()->Void)? = nil
+    public var selected: (()->Void)? = nil
     
-    var tailClicked: (()->Void)? = nil
+    public var tailClicked: (()->Void)? = nil
     
     public var performWhenSelect: ((UITableView, IndexPath) -> Void)? = nil
     
@@ -200,7 +200,7 @@ public struct DefaultTableCellViewModel: TableCellViewModel {
             self.height = max(max(_tailSize.height, _titleHeight), head?.size.height ?? 0) + 20 // 上下间距10
         }
         self.titleFrame = CGRect(x: _x, y: 0, width: _titleWidth, height: self.height)
-
+        
         if let _head = head {
             self.headFrame = CGRect(x: 15, y: (self.height - _head.size.height)/2, width: _head.size.width, height: _head.size.height)
         }else {
@@ -214,7 +214,7 @@ public struct DefaultTableCellViewModel: TableCellViewModel {
         } else {
             self.tailFrame = CGRect.zero
         }
-
+        
         self.performWhenSelect = performWhenSelect
     }
 }

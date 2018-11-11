@@ -9,19 +9,20 @@
 import Foundation
 import UIKit
 
-public func setup(mainColorHex: Int, normalGradientStartHex: Int, normalGradientEndHex: Int, highlightedGradientStartHex: Int, highlightedGradientEndHex: Int, noticeRedColorHex: Int) {
+func setup(mainColorHex: Int, normalGradientStartHex: Int, normalGradientEndHex: Int, highlightedGradientStartHex: Int, highlightedGradientEndHex: Int, noticeRedColorHex: Int, emptyHighlightedGradientStartHex: Int, emptyHighlightedGradientEndHex: Int) {
     
     // update base colors
     
-    UIColor.tk.main                     = mainColorHex.hexColor
-    UIColor.tk.noticeRed                = noticeRedColorHex.hexColor
-    UIColor.tk.normalGradientStart      = normalGradientStartHex.hexColor
-    UIColor.tk.normalGradientEnd        = normalGradientEndHex.hexColor
-    UIColor.tk.disableGradientStart     = normalGradientStartHex.hexColor.withAlphaComponent(0.5)
-    UIColor.tk.disableGradientEnd       = normalGradientEndHex.hexColor.withAlphaComponent(0.5)
-    UIColor.tk.highlightedGradientStart = highlightedGradientStartHex.hexColor
-    UIColor.tk.highlightedGradientEnd   = highlightedGradientEndHex.hexColor
-    
+    UIColor.tk.main                          = mainColorHex.hexColor
+    UIColor.tk.noticeRed                     = noticeRedColorHex.hexColor
+    UIColor.tk.normalGradientStart           = normalGradientStartHex.hexColor
+    UIColor.tk.normalGradientEnd             = normalGradientEndHex.hexColor
+    UIColor.tk.disableGradientStart          = normalGradientStartHex.hexColor.withAlphaComponent(0.5)
+    UIColor.tk.disableGradientEnd            = normalGradientEndHex.hexColor.withAlphaComponent(0.5)
+    UIColor.tk.highlightedGradientStart      = highlightedGradientStartHex.hexColor
+    UIColor.tk.highlightedGradientEnd        = highlightedGradientEndHex.hexColor
+    UIColor.tk.emptyHighlightedGradientStart = emptyHighlightedGradientStartHex.hexColor
+    UIColor.tk.emptyHighlightedGradientEnd   = emptyHighlightedGradientEndHex.hexColor
     // update additional css
     
     // uiview css
@@ -80,6 +81,8 @@ extension UIColor {
         static public fileprivate(set) var gray                     = 0x888888.hexColor
         /// 提示红
         static public fileprivate(set) var noticeRed                = 0xFF4200.hexColor
+        /// 提示红
+        static public fileprivate(set) var red                      = 0xFF4200.hexColor
         /// 可操作渐变起始
         static public fileprivate(set) var normalGradientStart      = 0x000000.hexColor
         /// 可操作渐变结束
@@ -92,6 +95,10 @@ extension UIColor {
         static public fileprivate(set) var highlightedGradientStart = 0x000000.hexColor
         /// 点击状渐变起始
         static public fileprivate(set) var highlightedGradientEnd   = 0x000000.hexColor
+        /// 空心渐变起始
+        static public fileprivate(set) var emptyHighlightedGradientStart = 0x000000.hexColor
+        /// 空心渐变结束
+        static public fileprivate(set) var emptyHighlightedGradientEnd = 0x000000.hexColor
         
         static public fileprivate(set) var white                    = UIColor.white
     }
@@ -131,6 +138,9 @@ public private(set) var buttonhighlightedImg: UIImage = CAGradientLayer([UIColor
 
 public private(set) var buttonDisableImg: UIImage     = CAGradientLayer([UIColor.tk.disableGradientStart, UIColor.tk.disableGradientEnd], windowsFrame).toImage
 
+public private(set) var emptyButtonNormalImg: UIImage = CAGradientLayer([UIColor.white, UIColor.white], windowsFrame).toImage
+
+public private(set) var emptyButtonSelectedImg: UIImage = CAGradientLayer([UIColor.tk.emptyHighlightedGradientStart, UIColor.tk.emptyHighlightedGradientEnd], windowsFrame).toImage
 
 public private(set) var buttonImgCss: UIButtonCss = buttonNormalImg.bgCss + buttonhighlightedImg.bgHCss + buttonDisableImg.bgDisableCss
 

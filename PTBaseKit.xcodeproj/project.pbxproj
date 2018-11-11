@@ -74,6 +74,7 @@
 		95A4526B212EB3AA00325960 /* WebURLController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4526A212EB3AA00325960 /* WebURLController.swift */; };
 		95B373C82186D49900608E53 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B373C72186D49900608E53 /* Date+Utils.swift */; };
 		95BA686B2121F3A300FDB7FD /* MJRefresh+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */; };
+		95D0F21F2198573000F74187 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D0F21E2198573000F74187 /* Global.swift */; };
 		95FB4E07215A36C200518489 /* DynamicNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB4E06215A36C200518489 /* DynamicNavigationBar.swift */; };
 		98929904E29583B5DA516CC9 /* Pods_PTBaseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B02495693B8E88A88D1991 /* Pods_PTBaseKit.framework */; };
 /* End PBXBuildFile section */
@@ -163,6 +164,7 @@
 		95A4526A212EB3AA00325960 /* WebURLController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebURLController.swift; sourceTree = "<group>"; };
 		95B373C72186D49900608E53 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MJRefresh+Extension.swift"; sourceTree = "<group>"; };
+		95D0F21E2198573000F74187 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		95FB4E06215A36C200518489 /* DynamicNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicNavigationBar.swift; sourceTree = "<group>"; };
 		C22F7CD723FF55B896D2E9C0 /* Pods-PTBaseKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTBaseKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PTBaseKitTests/Pods-PTBaseKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2B02495693B8E88A88D1991 /* Pods_PTBaseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PTBaseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -313,6 +315,7 @@
 				959BBF172111F4B400106646 /* Map */,
 				959BBF192111F4B400106646 /* SystemInfo */,
 				959BBF1B2111F4B400106646 /* Data */,
+				95D0F21E2198573000F74187 /* Global.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				959BBF2E2111F4B400106646 /* UIViewController+Extensions.swift in Sources */,
 				959BBF262111F4B400106646 /* GlobalValues.swift in Sources */,
 				959BBF312111F4B400106646 /* UIImage+Extensions.swift in Sources */,
+				95D0F21F2198573000F74187 /* Global.swift in Sources */,
 				959BBF232111F4B400106646 /* AMap+MapAdapter.swift in Sources */,
 				959BBF272111F4B400106646 /* Resources.swift in Sources */,
 				959300342154D4070084AF9C /* UIFont.swift in Sources */,
