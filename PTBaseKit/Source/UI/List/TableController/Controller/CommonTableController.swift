@@ -132,7 +132,7 @@ public class CommonTableController: BaseController, TableController {
         self.view += [self.emptyTipsImage, self.emptyTipsLabel]
         
         if self.emptyTipsImage.image == nil, self.emptyTipsLabel.attributedText == nil {
-            _ = self.setupEmptyPlaceHolder(image: PTBaseKit.Resource.emptyImage, title: PTBaseKit.Resource.emptyTips.attributedString(font: 14.customRegularFont))
+            _ = self.setupEmptyPlaceHolder(image: PTBaseKit.Resource.emptyImage, title: PTBaseKit.Resource.emptyTips.attributed([.font(14.customRegularFont)]))
         }
         
         self.tableView.snp.makeConstraints { (make) in

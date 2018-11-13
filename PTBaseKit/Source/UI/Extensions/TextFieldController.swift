@@ -27,8 +27,8 @@ public class TextFieldController: BaseController {
         return tf
     }()
     
-    let doneButton: UIButton = ViewFactory.createBarButton(title: PTBaseKit.Resource.textFieldDoneTitle.attributedString(color: UIColor.tk.main),
-                                                           disabledTitle: PTBaseKit.Resource.textFieldDoneTitle.attributedString(color: UIColor.tk.lightGray))
+    let doneButton: UIButton = ViewFactory.createBarButton(title: PTBaseKit.Resource.textFieldDoneTitle.attributed([.textColor(UIColor.tk.main)]),
+                                                           disabledTitle: PTBaseKit.Resource.textFieldDoneTitle.attributed([.textColor(UIColor.tk.lightGray)]))
     
     var doneAction: ((TextFieldController, String?)->Void)? = nil
     
@@ -98,8 +98,8 @@ extension TextFieldController {
         self.textField.keyboardType = keyboardType
         self.maximumLength = maximumLength
         if let _doneBtnTitle = doneBtnTitle {
-            self.doneButton.setAttributedTitle(_doneBtnTitle.attributedString(color: UIColor.tk.main), for: UIControl.State.normal)
-            self.doneButton.setAttributedTitle(_doneBtnTitle.attributedString(color: UIColor.tk.lightGray), for: UIControl.State.disabled)
+            self.doneButton.setAttributedTitle(_doneBtnTitle.attributed([.textColor(UIColor.tk.main)]), for: UIControl.State.normal)
+            self.doneButton.setAttributedTitle(_doneBtnTitle.attributed([.textColor(UIColor.tk.lightGray)]), for: UIControl.State.disabled)
         }
         return self
     }

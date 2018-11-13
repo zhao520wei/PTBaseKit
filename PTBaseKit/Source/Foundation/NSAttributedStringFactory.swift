@@ -25,10 +25,6 @@ public enum AttributedStringOptions {
 }
 
 extension String {
-    public func attributedString(font: UIFont = 15.customRegularFont, color: UIColor = UIColor.tk.black, alignment: NSTextAlignment? = nil) -> NSMutableAttributedString {
-        
-        return self.attributed([.font(font), .textColor(color), .paragraphStyle(lineSpacing: nil, alignment: alignment)])
-    }
     
     public func attributed(_ options: [AttributedStringOptions] = [.font(15.customRegularFont), .textColor(UIColor.tk.black), .paragraphStyle(lineSpacing: nil, alignment: nil)]) -> NSMutableAttributedString {
         
