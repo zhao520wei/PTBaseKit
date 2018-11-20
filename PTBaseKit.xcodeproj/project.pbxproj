@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8EE511AA73D1471191099AA0 /* Pods_PTBaseKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71585BF9C9A025414CE03955 /* Pods_PTBaseKitTests.framework */; };
+		95313C1621A3B67900920B09 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95313C1521A3B67900920B09 /* UIViewController+Navigation.swift */; };
 		95353D1F2153C85100E8436E /* BaiduMap+MapAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95353D1E2153C85100E8436E /* BaiduMap+MapAdapter.swift */; };
 		95409114212C098D00A82C7F /* IndexController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95409113212C098D00A82C7F /* IndexController.swift */; };
 		956CAB4A212D51BB00020D6E /* UtilsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956CAB49212D51BB00020D6E /* UtilsController.swift */; };
@@ -71,6 +72,7 @@
 		959BBF5C2111F4B500106646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBF1E2111F4B400106646 /* AppDelegate.swift */; };
 		959BBF5E2111F4F300106646 /* UIKitTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959BBF5D2111F4F300106646 /* UIKitTableController.swift */; };
 		95A4526B212EB3AA00325960 /* WebURLController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4526A212EB3AA00325960 /* WebURLController.swift */; };
+		95AB4636219B1FD2001C31D2 /* ListController+IGListKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AB4635219B1FD2001C31D2 /* ListController+IGListKit.swift */; };
 		95B373C82186D49900608E53 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B373C72186D49900608E53 /* Date+Utils.swift */; };
 		95BA686B2121F3A300FDB7FD /* MJRefresh+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */; };
 		95D0F21F2198573000F74187 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D0F21E2198573000F74187 /* Global.swift */; };
@@ -93,6 +95,7 @@
 		57221EA4330FE88D61459B1F /* Pods-PTBaseKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTBaseKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PTBaseKit/Pods-PTBaseKit.debug.xcconfig"; sourceTree = "<group>"; };
 		71585BF9C9A025414CE03955 /* Pods_PTBaseKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PTBaseKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6903A5DCB37FA0825753C3 /* Pods-PTBaseKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTBaseKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PTBaseKitTests/Pods-PTBaseKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		95313C1521A3B67900920B09 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		95353D1E2153C85100E8436E /* BaiduMap+MapAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaiduMap+MapAdapter.swift"; sourceTree = "<group>"; };
 		95409113212C098D00A82C7F /* IndexController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexController.swift; sourceTree = "<group>"; };
 		956CAB49212D51BB00020D6E /* UtilsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsController.swift; sourceTree = "<group>"; };
@@ -160,6 +163,7 @@
 		959BBF1E2111F4B400106646 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		959BBF5D2111F4F300106646 /* UIKitTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTableController.swift; sourceTree = "<group>"; };
 		95A4526A212EB3AA00325960 /* WebURLController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebURLController.swift; sourceTree = "<group>"; };
+		95AB4635219B1FD2001C31D2 /* ListController+IGListKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListController+IGListKit.swift"; sourceTree = "<group>"; };
 		95B373C72186D49900608E53 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MJRefresh+Extension.swift"; sourceTree = "<group>"; };
 		95D0F21E2198573000F74187 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -201,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				959BBEEE2111F4B400106646 /* ListController.swift */,
+				95AB4635219B1FD2001C31D2 /* ListController+IGListKit.swift */,
 				959BBEF22111F4B400106646 /* ASDisplayKit */,
 			);
 			path = Processing;
@@ -377,6 +382,7 @@
 				959BBEDC2111F4B400106646 /* UIButton+Extension.swift */,
 				959BBEDD2111F4B400106646 /* UIImage+Extensions.swift */,
 				959BBEDE2111F4B400106646 /* TextFieldController.swift */,
+				95313C1521A3B67900920B09 /* UIViewController+Navigation.swift */,
 				959BBEDF2111F4B400106646 /* UIBarButtonItem+Extension.swift */,
 				959BBEE02111F4B400106646 /* runtime+UIControl.swift */,
 				95BA686A2121F3A300FDB7FD /* MJRefresh+Extension.swift */,
@@ -728,6 +734,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PTBaseKit/Pods-PTBaseKit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
@@ -745,6 +752,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IGListKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
@@ -808,6 +816,7 @@
 				959BBF242111F4B400106646 /* GoogleMaps+MapManager.swift in Sources */,
 				959BBF2C2111F4B400106646 /* ImageSource.swift in Sources */,
 				9593002E2154D4070084AF9C /* UIColor.swift in Sources */,
+				95313C1621A3B67900920B09 /* UIViewController+Navigation.swift in Sources */,
 				959300352154D4070084AF9C /* UIImageViewCss.swift in Sources */,
 				959300302154D4070084AF9C /* UIViewCss.swift in Sources */,
 				959BBF302111F4B400106646 /* UIButton+Extension.swift in Sources */,
@@ -853,6 +862,7 @@
 				959BBF2E2111F4B400106646 /* UIViewController+Extensions.swift in Sources */,
 				959BBF262111F4B400106646 /* GlobalValues.swift in Sources */,
 				959BBF312111F4B400106646 /* UIImage+Extensions.swift in Sources */,
+				95AB4636219B1FD2001C31D2 /* ListController+IGListKit.swift in Sources */,
 				95D0F21F2198573000F74187 /* Global.swift in Sources */,
 				959BBF232111F4B400106646 /* AMap+MapAdapter.swift in Sources */,
 				959300342154D4070084AF9C /* UIFont.swift in Sources */,

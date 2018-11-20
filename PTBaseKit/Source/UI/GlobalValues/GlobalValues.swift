@@ -12,6 +12,6 @@ public var kSafeAreInsets: UIEdgeInsets {
     if #available(iOS 11.0, *) {
         return UIApplication.shared.delegate?.window??.safeAreaInsets ?? UIEdgeInsets.zero
     } else {
-        return UIEdgeInsets.zero
+        return UIEdgeInsets(top: UIApplication.shared.statusBarFrame.height, left: 0, bottom: 0, right: 0)
     }
 }

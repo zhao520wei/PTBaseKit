@@ -156,8 +156,8 @@ public class CommonTableController: BaseController, TableController {
     
     public func bindObservables() {
         if let _ = self.reloadAction {
-            self.tableView.rx_pullToRefresh()
-                .subscribe(onNext: {[weak self] in
+            self.tableView.rx_pullToRefresh
+                .subscribe(onNext: {[weak self] _ in
                     guard let weakSelf = self else {return}
                     weakSelf.reloadAction?(weakSelf)
                 })
