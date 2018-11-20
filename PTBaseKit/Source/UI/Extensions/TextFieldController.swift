@@ -57,7 +57,7 @@ public class TextFieldController: BaseController {
         self.view.addSubview(self.textField)
         
         self.textField.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(10)
+            make.top.equalToSuperview().offset(self.topOffset + 10)
             make.height.equalTo(44)
             make.leading.trailing.equalToSuperview()
         }

@@ -8,7 +8,10 @@
 
 import UIKit
 
+
+// MARK: - 针对普通的ViewController的navigation相关封装, 本身是NavigationViewController不适用
 extension UIViewController {
+    
     public func customPush(to viewController: UIViewController) {
         viewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(viewController, animated: true)
@@ -22,7 +25,8 @@ extension UIViewController {
         return self.navigationController?.navigationBar.bounds.height ?? 0
     }
     
+    // 顶部位移(controller全屏幕的时候才适用)
     public var topOffset: CGFloat {
-        return self.navigationController?.navigationBar.isTranslucent == true ? (UIApplication.shared.statusBarFrame.height + self.navigationBarHeight) : 0
+        return self.navigationController?.navigationBar.isTranslucent == true ? (kSafeAreInsets.top + self.navigationBarHeight) : 0
     }
 }
