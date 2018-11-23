@@ -56,7 +56,7 @@ PTBaseKit/
  
  UIKitTableController.swift文件中有一个调用`CommonTableController`的例子:
  
- ```
+ ```swift
  CommonTableController()
         .setupTableView(with: .sepratorStyle(.singleLine))
         .performWhenReload { (_table) in
@@ -86,7 +86,7 @@ PTBaseKit/
   - 使用了比较好理解的fram计算来实现layout. 这样除了提供不错的滑动性能, 也让使用者根据项目变更的情况较快修改, 比起ASDK这种滑动性能极佳可是又难上手的框架, 或者直接使用`SnapKit`来牺牲性能要来得好.
   
   为了遵守高内聚低耦合, 在使用的时候应该把Model->ViewModel这一步操作抽出, 不要添加`init`函数到`CommonTableCell`的ViewModel代码中, 用例里面由于没有业务Model, 只是写了一个单独函数产生ViewModel:
-  ```
+  ```swift
   private func createCellViewModels() -> [TableCellViewModel] {
     return
         (0...Int(arc4random_uniform(4)))
@@ -107,7 +107,7 @@ PTBaseKit/
   
   实际操作可以是这样:
   
-  ```
+  ```swift
  class SomeModel {
     ...
     ...
