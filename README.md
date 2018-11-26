@@ -39,15 +39,27 @@ PTBaseKit/
 ```
 
  # CssKit
- to be written...
+ 一般给UILabel赋值的做法:
+ ---
+ ```swift
+ let customLabel: UILabel = UILabel()
+ label.font = 13.customFont
+ label.textColor = UIColor.tk.main.textColorCss
+ label.text = "custom label"
+ ```
 
+ 使用CssKit给UILabel赋值的做法:
+ ---
+ ```swift
+ let customLabel: UILabel = UILabel() + 13.customFont.css + UIColor.tk.main.textColorCss + "custom label".css
+ ```
  # TableController
  
  TableController是针对列表功能抽象出来的协议, 与之关联的还有TableCell, TableSectionViewModel和TableCellViewModel协议. 整体上是一个MVVM的设计, 把TableCell的适配从Controller分离出来, TableController专注于Table的加载动作, TableCellViewModel用于中转Model->Cell的数据以及持有Cell的一些交互回调, 而TableCell则提供更新函数.
  
  # CommonTableController
  
- thinker vc开发项目中的列表页面几乎都是`CommonTableController`类, 它遵守`TableController`协议. 通过TableView和RJRefresh组合成基本的上下拉加载逻辑, 而内部处理和UITableViewCell有关的操作都是面向TableCell以及TableCellViewModel协议的, 所以它与TableViewCell的实现以及适配几乎不存在耦合. 
+ thinker vc开发项目中的列表页面几乎都是`CommonTableController`类, 它遵守`TableController`协议. 通过TableView和RJRefresh组合成基本的上下拉加载逻辑, 而内部处理和UITableViewCell有关的操作都是面向TableCell以及TableCellViewModel协议的, 所以它与TableViewCell的实现以及适配不存在耦合. 
  
   - 使用者需要创建一个列表界面的时候可以直接使用`CommonTableController`, 它提供的接口可以应付大部分使用场景. 这样有利于避免创建多个ViewController带来的维护高成本和低代码复用.
   - 专注`SectionViewModel/TableCellViewModel`的产生和变化, 它们以数组的形式传入`CommonTableController`, 根据数组中元素顺序的不同, `CommonTableController`的显示内容就会有相应变化.
