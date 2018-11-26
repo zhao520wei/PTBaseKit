@@ -44,7 +44,7 @@ PTBaseKit/
  ```swift
  let customLabel: UILabel = UILabel()
  label.font = 13.customFont
- label.textColor = UIColor.tk.main.textColorCss
+ label.textColor = UIColor.tk.main
  label.text = "custom label"
  ```
 
