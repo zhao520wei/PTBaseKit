@@ -64,12 +64,6 @@ public class CommonTableController: BaseController, TableController {
         self.performReload()
     }
     
-    deinit {
-        self.tableView.mj_header = nil
-        self.tableView.mj_footer = nil
-        self.sectionViewModels = []
-    }
-    
     @objc dynamic private func performReload() {
         if let header = self.tableView.mj_header, self.loadAutomaticlly {
             header.beginRefreshing()
