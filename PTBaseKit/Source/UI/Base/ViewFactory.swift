@@ -27,16 +27,16 @@ public struct ViewFactory {
         return label
     }
     
-    public static func createEmptyButton(tintColor: UIColor = UIColor.tk.gray) -> UIButton {
+    public static func createEmptyButton(tintColor: UIColor = UIColor.tk.gray, radius: CGFloat = PTBaseKit.buttonRadius) -> UIButton {
         let btn = UIButton(type: UIButton.ButtonType.system)
         btn += tintColor.textColorCss
         btn += 1.borderCss
         btn += tintColor.borderCss
-        btn += 5.cornerRadiusCss
+        btn += radius.cornerRadiusCss
         return btn
     }
     
-    public static func createGradientButton(cornerRadius: Int? = nil) -> UIButton {
+    public static func createGradientButton(cornerRadius: CGFloat? = nil) -> UIButton {
         let button = UIButton(type: UIButton.ButtonType.system)
         button += buttonCss
         if let _cornerRadius = cornerRadius {
@@ -45,7 +45,7 @@ public struct ViewFactory {
         return button
     }
     
-    public static func createRoundButton(tintColor: UIColor = UIColor.tk.white, radius: CGFloat = 5) -> UIButton {
+    public static func createRoundButton(tintColor: UIColor = UIColor.tk.white, radius: CGFloat = PTBaseKit.buttonRadius) -> UIButton {
         let btn = UIButton(type: UIButton.ButtonType.system)
         btn += radius.cornerRadiusCss
         btn += buttonImgCss
