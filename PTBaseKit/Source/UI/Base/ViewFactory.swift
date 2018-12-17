@@ -1,6 +1,6 @@
 //
 //  ViewFactory.swift
-//  ThinkerBaseKit
+//  PTBaseKit
 //
 //  Created by P36348 on 01/01/2018.
 //  Copyright © 2018 P36348. All rights reserved.
@@ -88,5 +88,60 @@ public struct ViewFactory {
     
     public static func createBarButtonItem(_ title: String?) -> UIBarButtonItem {
         return UIBarButtonItem(title: title, style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+    }
+}
+
+extension UITextField {
+    public enum Style {
+        case normal, underline
+    }
+}
+
+public class PTTextField: UITextField {
+    
+    public var contentInsets: UIEdgeInsets = UIEdgeInsets.zero
+    
+    public var style: Style = .normal
+    
+    override open func draw(_ rect: CGRect) {
+        if self.style == .underline {
+            let context = UIGraphicsGetCurrentContext()
+            context?.setFillColor(0xDEDFE0.hexColor.cgColor)
+            context?.setLineWidth(0.5)
+            context?.fill(CGRect(x: 0, y: rect.maxY - 1, width: rect.width, height: 0.5))
+        }
+    }
+    
+    
+    private func textContentRect(forBounds bounds: CGRect) -> CGRect {
+        return CGRect(x: bounds.origin.x + contentInsets.left,
+                      y: bounds.origin.y + contentInsets.top,
+                      width: bounds.width - contentInsets.left - contentInsets.right,
+                      height: bounds.height - contentInsets.top - contentInsets.bottom)
+    }
+    
+    
+    public override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return self.textContentRect(forBounds: super.textRect(forBounds: bounds))
+    }
+    
+    public override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return self.textContentRect(forBounds: super.placeholderRect(forBounds: bounds))
+    }
+    
+    
+    public override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return self.textContentRect(forBounds: super.editingRect(forBounds: bounds))
+    }
+    
+    public override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
+        let superResult = super.leftViewRect(forBounds: bounds)
+        return CGRect(x: superResult.origin.x + contentInsets.left, y: superResult.origin.y + contentInsets.top, width: superResult.width, height: superResult.height - contentInsets.top - contentInsets.bottom)
+    }
+    
+    
+    public override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
+        let superResult = super.rightViewRect(forBounds: bounds)
+        return CGRect(x: superResult.origin.x - contentInsets.right, y: superResult.origin.y + contentInsets.top, width: superResult.width, height: superResult.height - contentInsets.top - contentInsets.bottom)
     }
 }

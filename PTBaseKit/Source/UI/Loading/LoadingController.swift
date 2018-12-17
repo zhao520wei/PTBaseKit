@@ -1,6 +1,6 @@
 //
 //  LoadingController.swift
-//  ThinkerBaseKit
+//  PTBaseKit
 //
 //  Created by P36348 on 23/11/2017.
 //  Copyright © 2017 ThinkerVC. All rights reserved.
