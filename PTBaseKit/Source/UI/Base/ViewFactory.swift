@@ -125,14 +125,11 @@ public class PTTextField: UITextField {
         return self.textContentRect(forBounds: super.textRect(forBounds: bounds))
     }
     
-    public override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return self.textContentRect(forBounds: super.placeholderRect(forBounds: bounds))
-    }
-    
     
     public override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return self.textContentRect(forBounds: super.editingRect(forBounds: bounds))
     }
+    
     
     public override func leftViewRect(forBounds bounds: CGRect) -> CGRect {
         let superResult = super.leftViewRect(forBounds: bounds)
