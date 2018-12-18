@@ -40,7 +40,7 @@ extension UIButton {
         return self.timer != nil
     }
     
-    /// 倒计时之前的
+    /// 倒计时之前的可用状态
     private var preEnable: Bool {
         set {
             objc_setAssociatedObject(self, &preEnableKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -50,6 +50,7 @@ extension UIButton {
         }
     }
     
+    /// 倒计时之前的标题
     private var preTitle: String? {
         set {
             objc_setAssociatedObject(self, &preTitleKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -59,6 +60,7 @@ extension UIButton {
         }
     }
     
+    /// 倒计时用标题
     private var countDownTitle: String? {
         set {
             objc_setAssociatedObject(self, &countDownTitleKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
@@ -68,6 +70,7 @@ extension UIButton {
         }
     }
     
+    /// 倒计时之前的字体(normal状态)
     private var preTitleColor: UIColor? {
         set {
             objc_setAssociatedObject(self, &preTitleColorKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)

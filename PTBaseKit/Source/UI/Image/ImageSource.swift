@@ -45,13 +45,17 @@ struct DefaultImageSource: ImageSource {
     
     var rawData: ImageRawData
     
-    var targetSize: CGSize?
+    var targetSize: CGSize
     
     init(rawData: ImageRawData, placeHolder: ImageRawData?, css: UIViewCss?, targetSize: CGSize?) {
         self.rawData = rawData
         self.css = css
         self.placeHolder = placeHolder
-        self.targetSize = targetSize
+        if let _targetSize = targetSize {
+            self.targetSize = _targetSize
+        }else {
+            self.targetSize = .zero
+        }
     }
 }
 
@@ -161,8 +165,8 @@ extension UIButton: ImageSetable {
                              for: UIControl.State.normal,
                              placeholder: imageSource?.placeHolder?.imageValue,
                              options: [.scaleFactor(UIScreen.main.scale)], //图片scale转换
-                             progressBlock: nil,
-                             completionHandler: nil)
+                progressBlock: nil,
+                completionHandler: nil)
         case .data:
             self.setImage(UIImage(data: (source.rawData as! Data)), for: UIControl.State.normal)
         case .image:
