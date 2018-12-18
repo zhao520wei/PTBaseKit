@@ -14,7 +14,7 @@ extension UIButton {
     public func performWhenClick(action: @escaping ()->Void) -> Disposable {
         return self.rx.controlEvent(UIControl.Event.touchUpInside).subscribe(onNext: { (_) in
             action()
-        }, onError: nil, onCompleted: nil, onDisposed: nil)
+        })
     }
 }
 
@@ -86,12 +86,15 @@ extension UIButton {
         }
     }
     
-    private var countDownObserver: AnyObserver<UIButton>? {
-        set {
-            objc_setAssociatedObject(self, &observerKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
+    private var countDownObserver: PublishSubject<UIButton> {
         get {
-            return objc_getAssociatedObject(self, &observerKey) as? AnyObserver<UIButton> ?? nil
+            if let observer = objc_getAssociatedObject(self, &observerKey) as? PublishSubject<UIButton> {
+                return observer
+            }else {
+                let observer = PublishSubject<UIButton>()
+                objc_setAssociatedObject(self, &observerKey, observer, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                return observer
+            }
         }
     }
     
@@ -112,8 +115,7 @@ extension UIButton {
         
         self.countDownTitle = countDownTitle
         
-        self.setTitle("\(self.countDownTitle ?? "")(\(self.timeCount))", for: .normal)
-        self.setTitleColor(UIColor.tk.lightGray, for: .normal)
+        self.setAttributedTitle("\(self.countDownTitle ?? "")(\(self.timeCount))".attributed([.textColor(UIColor.tk.lightGray)]), for: UIControl.State.disabled)
         
         self.preEnable = self.isEnabled
         self.isEnabled = false
@@ -125,11 +127,8 @@ extension UIButton {
     
     /// 返回一个Observable,在倒计时完成后会发出信号, 如果不在此处订阅, 倒计时结束后按钮的isEnable会恢复到倒计时前的状态
     public func rx_startCountDown(count:Int = 60, countDownTitle: String) -> Observable<UIButton> {
-        return Observable.create({ [weak self] (observer) -> Disposable in
-            self?.startCountDown(count: count, countDownTitle: countDownTitle)
-            self?.countDownObserver = observer
-            return Disposables.create()
-        })
+        self.startCountDown(count: count, countDownTitle: countDownTitle)
+        return self.countDownObserver
     }
     
     @objc public func changeTime(_ time:Timer){
@@ -137,20 +136,18 @@ extension UIButton {
         if
             self.timeCount >= 0
         {
-            self.setTitle("\(self.countDownTitle ?? "")(\(self.timeCount))", for: .normal)
+            self.setAttributedTitle("\(self.countDownTitle ?? "")(\(self.timeCount))".attributed([.textColor(UIColor.tk.lightGray)]), for: UIControl.State.disabled)
         }
         else
         {
-            self.setTitle(self.preTitle, for: .normal)
-            
-            self.setTitleColor(preTitleColor, for: .normal)
+            self.setAttributedTitle(self.preTitle?.attributed([.textColor(preTitleColor ?? UIColor.black)]), for: UIControl.State.disabled)
             
             self.timeCount = 60
             self.isEnabled = self.preEnable
             
             time.invalidate()
             self.timer = nil
-            self.countDownObserver?.onNext(self)
+            self.countDownObserver.onNext(self)
         }
     }
 }
