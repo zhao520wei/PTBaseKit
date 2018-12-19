@@ -20,6 +20,7 @@ public enum AttributedStringOptions {
     case textColor(UIColor)
     case font(UIFont)
     case paragraphStyle(lineSpacing: CGFloat?, alignment: NSTextAlignment?)
+    case lineBreakMode(NSLineBreakMode)
     case indent(head: CGFloat, tail: CGFloat)
     case underLine(NSUnderlineStyle?,  UIColor?)
 }
@@ -49,6 +50,8 @@ extension String {
                 if let _lineSpacing = lineSpacing {
                     paragraphStyle.lineSpacing = _lineSpacing
                 }
+            case .lineBreakMode(let lineBreakMode):
+                paragraphStyle.lineBreakMode = lineBreakMode
             case .indent(let head, let tail):
                 paragraphStyle.firstLineHeadIndent = head
                 paragraphStyle.headIndent = head
@@ -81,8 +84,8 @@ extension NSMutableAttributedString {
 }
 
 public func +<T: NSMutableAttributedString>(left: T, right: NSAttributedString) -> T {
-        left.append(right)
-        return  left
+    left.append(right)
+    return  left
 }
 
 public func +<T: NSMutableAttributedString>(left: T, option: AttributedStringOptions) -> T {
@@ -103,6 +106,8 @@ public func +<T: NSMutableAttributedString>(left: T, option: AttributedStringOpt
             if let _lineSpacing = lineSpacing {
                 paragraphStyle.lineSpacing = _lineSpacing
             }
+        case .lineBreakMode(let lineBreakMode):
+            paragraphStyle.lineBreakMode = lineBreakMode
         case .indent(let head, let tail):
             paragraphStyle.firstLineHeadIndent = head
             paragraphStyle.headIndent = head
