@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  ThinkerBaseKit
+//  PTBaseKit
 //
 //  Created by P36348 on 2018/4/25.
 //  Copyright © 2018 P36348. All rights reserved.
@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //         application to it. This property is optional since there are legitimate
 //         error conditions that could cause the creation of the store to fail.
 //        */
-//        let container = NSPersistentContainer(name: "ThinkerBaseKit")
+//        let container = NSPersistentContainer(name: "PTBaseKit")
 //        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
 //            if let error = error as NSError? {
 //                // Replace this implementation with code to handle the error appropriately.

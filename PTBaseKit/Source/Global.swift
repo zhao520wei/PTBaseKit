@@ -37,7 +37,7 @@ extension PTBaseKit {
         
         public static var textFieldDoneTitle: String = "Done"
         
-        public static var emptyTips: String = "No Data Yet."
+        public static var emptyTips: NSAttributedString = "No Data Yet.".attributed([.font(14.customRegularFont)])
         
         public static var loadingProgressTitle: String = "Loading"
         

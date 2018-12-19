@@ -1,6 +1,6 @@
 //
 //  ImageSource.swift
-//  ThinkerBaseKit
+//  PTBaseKit
 //
 //  Created by P36348 on 30/01/2018.
 //  Copyright © 2018 P36348. All rights reserved.
@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 public enum ImageSourceType {
-    case string, url, image, data
+    case string(String), url(URL), image(UIImage), data(Data)
 }
 
 public protocol ImageSource {
@@ -45,13 +45,17 @@ struct DefaultImageSource: ImageSource {
     
     var rawData: ImageRawData
     
-    var targetSize: CGSize?
+    var targetSize: CGSize
     
     init(rawData: ImageRawData, placeHolder: ImageRawData?, css: UIViewCss?, targetSize: CGSize?) {
         self.rawData = rawData
         self.css = css
         self.placeHolder = placeHolder
-        self.targetSize = targetSize
+        if let _targetSize = targetSize {
+            self.targetSize = _targetSize
+        }else {
+            self.targetSize = .zero
+        }
     }
 }
 
@@ -90,14 +94,14 @@ extension String: ImageRawData {
     
     public var type: ImageSourceType
     {
-        return .string
+        return .string(self)
     }
 }
 
 extension URL: ImageRawData {
     public var type: ImageSourceType
     {
-        return .url
+        return .url(self)
     }
 }
 
@@ -109,7 +113,7 @@ extension UIImage: ImageRawData {
     
     public var type: ImageSourceType
     {
-        return .image
+        return .image(self)
     }
 }
 
@@ -117,17 +121,7 @@ extension Data: ImageRawData {
     
     public var type: ImageSourceType
     {
-        return .data
-    }
-}
-
-extension String: Resource {
-    public var cacheKey: String {
-        return self
-    }
-    
-    public var downloadURL: URL {
-        return URL(string: self) ?? URL(string: "https://www.google.com")!
+        return .data(self)
     }
 }
 
@@ -156,17 +150,24 @@ extension UIButton: ImageSetable {
         switch
             source.type
         {
-        case .string, .url:
-            self.kf.setImage(with: source.rawData as? Resource,
+        case .string(let string):
+            self.kf.setImage(with: URL(string: string),
                              for: UIControl.State.normal,
                              placeholder: imageSource?.placeHolder?.imageValue,
-                             options: [.scaleFactor(UIScreen.main.scale)], //图片scale转换
+                             options: [.scaleFactor(UIScreen.main.scale)],
                              progressBlock: nil,
                              completionHandler: nil)
-        case .data:
-            self.setImage(UIImage(data: (source.rawData as! Data)), for: UIControl.State.normal)
-        case .image:
-            self.setImage(source.rawData as? UIImage, for: UIControl.State.normal)
+        case .url(let url):
+            self.kf.setImage(with: url,
+                             for: UIControl.State.normal,
+                             placeholder: imageSource?.placeHolder?.imageValue,
+                             options: [.scaleFactor(UIScreen.main.scale)],
+                             progressBlock: nil,
+                             completionHandler: nil)
+        case .data(let data):
+            self.setImage(UIImage(data: data), for: UIControl.State.normal)
+        case .image(let image):
+            self.setImage(image, for: UIControl.State.normal)
         }
     }
 }
@@ -188,16 +189,22 @@ extension UIImageView: ImageSetable {
         switch
             source.type
         {
-        case .string, .url:
-            self.kf.setImage(with: source.rawData as? Resource,
+        case .string(let string):
+            self.kf.setImage(with: URL(string: string),
+                             placeholder: imageSource?.placeHolder?.imageValue,
+                             options: [.scaleFactor(UIScreen.main.scale)],
+                             progressBlock: nil,
+                             completionHandler: nil)
+        case .url(let url):
+            self.kf.setImage(with: url,
                              placeholder: source.placeHolder?.imageValue,
                              options: [.scaleFactor(UIScreen.main.scale)],
                              progressBlock: nil,
                              completionHandler: nil)
-        case .data:
-            self.image = UIImage(data: (source.rawData as! Data))
-        case .image:
-            self.image = source.rawData as? UIImage
+        case .data(let data):
+            self.image = UIImage(data: data)
+        case .image(let image):
+            self.image = image
         }
     }
 }

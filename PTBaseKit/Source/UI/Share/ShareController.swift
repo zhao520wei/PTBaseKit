@@ -1,6 +1,6 @@
 //
 //  ShareController.swift
-//  ThinkerBaseKit
+//  PTBaseKit
 //
 //  Created by P36348 on 28/03/2018.
 //  Copyright © 2018 ThinkerVC. All rights reserved.

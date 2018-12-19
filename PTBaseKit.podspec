@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.dependency 'RxSwift'
   s.dependency 'MJRefresh'
   s.dependency 'MBProgressHUD'
-  s.dependency 'Kingfisher'
+  s.dependency 'Kingfisher', '~> 4.10.1' 
 end

@@ -32,12 +32,12 @@ class WebURLController: BaseController {
 
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func performSetup() {
         self.view.addSubview(self.input)
         self.view.addSubview(self.submit)
@@ -58,10 +58,10 @@ class WebURLController: BaseController {
             .disposed(by: self)
         
         self.submit.rx.controlEvent(UIControl.Event.touchUpInside)
-            .subscribe (onNext: {  [weak self] () in
-                if let _self = self, let text = self?.input.text {
-                    _self.internalSubmit.onNext(text)
-                }
-            }).disposed(by: self)
+            .flatMap({[unowned self] in self.input.rx.text.orEmpty })
+            .subscribe (onNext: {  [weak self] (text) in
+                self?.internalSubmit.onNext(text)
+            })
+            .disposed(by: self)
     }
 }

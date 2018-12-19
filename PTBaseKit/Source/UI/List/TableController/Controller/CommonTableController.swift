@@ -1,6 +1,6 @@
 //
 //  CommonTableController.swift
-//  ThinkerBaseKit
+//  PTBaseKit
 //
 //  Created by P36348 on 13/12/2017.
 //  Copyright © 2017 P36348. All rights reserved.
@@ -126,7 +126,7 @@ public class CommonTableController: BaseController, TableController {
         self.view += [self.emptyTipsImage, self.emptyTipsLabel]
         
         if self.emptyTipsImage.image == nil, self.emptyTipsLabel.attributedText == nil {
-            _ = self.setupEmptyPlaceHolder(image: PTBaseKit.Resource.emptyImage, title: PTBaseKit.Resource.emptyTips.attributed([.font(14.customRegularFont)]))
+            _ = self.setupEmptyPlaceHolder(image: PTBaseKit.Resource.emptyImage, title: PTBaseKit.Resource.emptyTips)
         }
         
         self.tableView.snp.makeConstraints { (make) in
