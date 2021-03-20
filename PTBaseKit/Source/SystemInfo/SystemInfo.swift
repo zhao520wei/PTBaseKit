@@ -11,3 +11,5 @@ import Foundation
 public var applicationVersion: String {
     return "version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "") build \(Bundle.main.infoDictionary?["CFBundleVersion"] ?? "")"
 }
+
+// my aaaa
